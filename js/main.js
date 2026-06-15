@@ -321,7 +321,6 @@
     }
     run();
   }
-  marquee(document.getElementById('heroTicker'), 0.55);
   var strip = document.querySelector('.strip__track');
   marquee(strip, 0.7);
 

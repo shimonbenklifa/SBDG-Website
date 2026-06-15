@@ -4,11 +4,11 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta name="theme-color" content="#0b0b0d" />
-  <title>SB Development Group — Vertically Integrated Real Estate Development &amp; Construction</title>
-  <meta name="description" content="SB Development Group is a vertically integrated, New York–based real estate developer and general contractor. Two decades of ground-up development across New York and South Florida — over 3 million square feet built and underway." />
+  <title>SB Development Group · Real Estate Development &amp; Construction</title>
+  <meta name="description" content="SB Development Group is a vertically integrated developer and general contractor. Two decades of ground up development across New York and South Florida." />
 
   <meta property="og:title" content="SB Development Group" />
-  <meta property="og:description" content="Vertically integrated developer & general contractor. Building the next era of the East Coast skyline." />
+  <meta property="og:description" content="A vertically integrated developer and builder. New York and Miami." />
   <meta property="og:type" content="website" />
 
   <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -17,7 +17,6 @@
 
   <link rel="stylesheet" href="css/style.css" />
   <script>
-    // Progressive enhancement flag — if JS runs, swap class so reveal styles engage.
     document.documentElement.classList.remove('no-js');
     document.documentElement.classList.add('js');
   </script>
@@ -39,8 +38,11 @@
   <div class="loader" id="loader" aria-hidden="true">
     <div class="loader__inner">
       <div class="loader__brand">
-        <span class="loader__mark">SB</span>
-        <span class="loader__word" data-loader-word>DEVELOPMENT&nbsp;GROUP</span>
+        <svg class="loader-logo" viewBox="0 0 40 46" aria-hidden="true" focusable="false">
+          <path d="M13 40 L13 27 L15.5 27 L15.5 19 L17.5 19 L17.5 12 L19 12 L19 7 L20 4 L21 7 L21 12 L22.5 12 L22.5 19 L24.5 19 L24.5 27 L27 27 L27 40 Z" fill="currentColor"/>
+          <rect x="9" y="42" width="22" height="1.4" fill="currentColor"/>
+        </svg>
+        <span class="loader__word" data-loader-word>SB&nbsp;DEVELOPMENT&nbsp;GROUP</span>
       </div>
       <div class="loader__bar"><span class="loader__bar-fill" id="loaderBar"></span></div>
       <div class="loader__meta">
@@ -55,9 +57,12 @@
 
   <!-- ============ NAV ============ -->
   <header class="nav" id="nav">
-    <a class="nav__brand" href="#top" data-cursor="home">
-      <span class="nav__brand-mark">SB</span>
-      <span class="nav__brand-text">Development Group</span>
+    <a class="nav__brand" href="#top" data-cursor="home" aria-label="SB Development Group, home">
+      <svg class="logo-mark" viewBox="0 0 40 46" aria-hidden="true" focusable="false">
+        <path d="M13 40 L13 27 L15.5 27 L15.5 19 L17.5 19 L17.5 12 L19 12 L19 7 L20 4 L21 7 L21 12 L22.5 12 L22.5 19 L24.5 19 L24.5 27 L27 27 L27 40 Z" fill="currentColor"/>
+        <rect x="9" y="42" width="22" height="1.4" fill="currentColor"/>
+      </svg>
+      <span class="nav__brand-text">SB&nbsp;Development&nbsp;Group</span>
     </a>
     <nav class="nav__links" aria-label="Primary">
       <a href="#about" class="nav__link"><span>01</span> Firm</a>
@@ -96,19 +101,19 @@
       </div>
 
       <div class="hero__inner">
-        <div class="hero__eyebrow reveal-line"><span>Vertically Integrated · Developer &amp; General Contractor</span></div>
+        <div class="hero__eyebrow reveal-line"><span>Developer and General Contractor · New York and Miami</span></div>
 
         <h1 class="hero__title">
-          <span class="line"><span class="word">Building</span> <span class="word">the</span></span>
-          <span class="line"><span class="word italic">next&nbsp;era</span> <span class="word">of&nbsp;the</span></span>
-          <span class="line"><span class="word">East&nbsp;Coast</span> <span class="word">skyline.</span></span>
+          <span class="line"><span class="word">We</span> <span class="word">build</span></span>
+          <span class="line"><span class="word italic">what</span> <span class="word">we</span></span>
+          <span class="line"><span class="word">develop.</span></span>
         </h1>
 
         <div class="hero__row">
           <p class="hero__lede reveal-fade">
-            A New York–based real estate developer and builder with two decades of
-            ground-up experience — uniting capital, design, and construction under one roof
-            across New York and South Florida.
+            A New York based developer and builder. For two decades we have brought
+            capital, design, and construction under one roof, delivering ground up
+            projects across New York and South Florida.
           </p>
           <a href="#portfolio" class="hero__scroll" data-cursor="explore">
             <span class="hero__scroll-ring">
@@ -119,54 +124,40 @@
           </a>
         </div>
       </div>
-
-      <div class="hero__ticker" aria-hidden="true">
-        <div class="hero__ticker-track" id="heroTicker">
-          <span>3M+ SQ FT IN DEVELOPMENT</span><i></i>
-          <span>$1B+ SOUTH FLORIDA PIPELINE</span><i></i>
-          <span>TWO DOZEN GROUND-UP PROJECTS</span><i></i>
-          <span>NEW YORK · MIAMI</span><i></i>
-          <span>3M+ SQ FT IN DEVELOPMENT</span><i></i>
-          <span>$1B+ SOUTH FLORIDA PIPELINE</span><i></i>
-          <span>TWO DOZEN GROUND-UP PROJECTS</span><i></i>
-          <span>NEW YORK · MIAMI</span><i></i>
-        </div>
-      </div>
     </section>
 
-    <!-- ============ MARQUEE OF DISCIPLINES ============ -->
+    <!-- ============ DISCIPLINE MARQUEE ============ -->
     <section class="strip" aria-label="Disciplines">
       <div class="strip__track">
-        <span>Development</span><b>✦</b><span>Construction</span><b>✦</b><span>Acquisitions</span><b>✦</b><span>Capital</span><b>✦</b><span>Design</span><b>✦</b>
-        <span>Development</span><b>✦</b><span>Construction</span><b>✦</b><span>Acquisitions</span><b>✦</b><span>Capital</span><b>✦</b><span>Design</span><b>✦</b>
+        <span>Development</span><b>·</b><span>Construction</span><b>·</b><span>Acquisitions</span><b>·</b><span>Capital</span><b>·</b><span>Design</span><b>·</b>
+        <span>Development</span><b>·</b><span>Construction</span><b>·</b><span>Acquisitions</span><b>·</b><span>Capital</span><b>·</b><span>Design</span><b>·</b>
       </div>
     </section>
 
     <!-- ============ ABOUT / FIRM ============ -->
     <section class="about" id="about">
       <div class="section-head">
-        <span class="section-index" data-reveal>01 — The Firm</span>
+        <span class="section-index" data-reveal>01 / The Firm</span>
       </div>
       <div class="about__grid">
         <div class="about__lead">
           <h2 class="about__statement" data-split>
             Founded in 2010, SB Development Group is a vertically integrated developer
-            and general contractor — pairing institutional discipline with the hands-on
-            craft of a builder.
+            and general contractor. We pair institutional discipline with the craft
+            of a builder.
           </h2>
         </div>
         <div class="about__body">
           <p data-reveal>
             Led by founders Joseph Stern and Roni Benjamini, whose backgrounds span
-            engineering, construction, development, acquisitions, and finance, SBD controls
-            every stage of the lifecycle. Through its affiliate, 1 Oak Construction, the
-            firm builds what it imagines — eliminating the gap between vision and execution.
+            engineering, construction, development, acquisitions, and finance, the firm
+            controls every stage of a project. We build what we develop, closing the
+            gap between vision and execution.
           </p>
           <p data-reveal>
-            From luxury condominiums and high-rise towers to mixed-use and residential
-            communities, SBD has delivered more than two dozen ground-up projects across
-            New York and Florida — and is now shaping the next generation of the
-            South Florida skyline.
+            From luxury condominiums and high rise towers to mixed use and residential
+            communities, SB Development has delivered more than two dozen ground up
+            projects across New York and Florida, with a growing presence in South Florida.
           </p>
           <a href="#approach" class="link-arrow" data-reveal data-cursor="more">
             <span>Our approach</span>
@@ -182,8 +173,8 @@
           <span class="stat__label">Sq Ft in Development</span>
         </div>
         <div class="stat" data-reveal>
-          <span class="stat__num"><span data-count="24" data-prefix="" data-suffix="+">0</span></span>
-          <span class="stat__label">Ground-Up Projects</span>
+          <span class="stat__num"><span data-count="24" data-suffix="+">0</span></span>
+          <span class="stat__label">Ground Up Projects</span>
         </div>
         <div class="stat" data-reveal>
           <span class="stat__num"><span data-prefix="$" data-count="1" data-suffix="B+">0</span></span>
@@ -196,17 +187,17 @@
       </div>
     </section>
 
-    <!-- ============ APPROACH (PINNED / NUMBERED) ============ -->
+    <!-- ============ APPROACH ============ -->
     <section class="approach" id="approach">
       <div class="approach__intro">
-        <span class="section-index light" data-reveal>02 — Approach</span>
+        <span class="section-index light" data-reveal>02 / Approach</span>
         <h2 class="approach__title" data-split>
           One firm. <span class="italic">Every</span> discipline. Total control.
         </h2>
         <p class="approach__sub" data-reveal>
-          Most developers depend on a chain of third parties. We don't. By owning capital,
-          design oversight, and construction, we move faster, build better, and protect
-          value at every turn.
+          Most developers depend on a chain of third parties. We do not. By owning
+          capital, design oversight, and construction, we move faster, build better,
+          and protect value at every stage.
         </p>
       </div>
 
@@ -214,35 +205,35 @@
         <article class="pillar" data-reveal>
           <span class="pillar__no">01</span>
           <div class="pillar__main">
-            <h3>Identify &amp; Acquire</h3>
-            <p>We source mispriced sites in supply-constrained markets, underwriting with the
-              eye of an operator who will actually build the asset.</p>
+            <h3>Identify and Acquire</h3>
+            <p>We source mispriced sites in supply constrained markets, underwriting
+              with the eye of an operator who will actually build the asset.</p>
           </div>
           <span class="pillar__tag">Acquisitions</span>
         </article>
         <article class="pillar" data-reveal>
           <span class="pillar__no">02</span>
           <div class="pillar__main">
-            <h3>Design &amp; Capitalize</h3>
-            <p>World-class architects and disciplined capital partners shape product that is
-              both desirable and durable — accessible luxury, engineered to last.</p>
+            <h3>Design and Capitalize</h3>
+            <p>Leading architects and disciplined capital partners shape product that is
+              desirable and built to last.</p>
           </div>
           <span class="pillar__tag">Design · Finance</span>
         </article>
         <article class="pillar" data-reveal>
           <span class="pillar__no">03</span>
           <div class="pillar__main">
-            <h3>Build — In-House</h3>
-            <p>Through 1 Oak Construction we self-perform, controlling schedule, cost, and
-              quality from foundation to topping out.</p>
+            <h3>Build In House</h3>
+            <p>We self perform construction, controlling schedule, cost, and quality
+              from foundation to topping out.</p>
           </div>
           <span class="pillar__tag">Construction</span>
         </article>
         <article class="pillar" data-reveal>
           <span class="pillar__no">04</span>
           <div class="pillar__main">
-            <h3>Deliver &amp; Steward</h3>
-            <p>We hand over landmark addresses — and the long-term value they create for
+            <h3>Deliver and Steward</h3>
+            <p>We deliver landmark addresses and the lasting value they create for
               residents, partners, and the cities they call home.</p>
           </div>
           <span class="pillar__tag">Delivery</span>
@@ -253,47 +244,59 @@
     <!-- ============ PORTFOLIO ============ -->
     <section class="portfolio" id="portfolio">
       <div class="section-head portfolio__head">
-        <span class="section-index" data-reveal>03 — Portfolio</span>
+        <span class="section-index" data-reveal>03 / Portfolio</span>
         <h2 class="portfolio__title" data-split>Selected developments</h2>
       </div>
 
       <!-- ===== INTERACTIVE 3D MASSING MAP ===== -->
       <div class="mapsec" data-reveal>
         <div class="mapsec__head">
-          <p class="mapsec__sub">An interactive massing model of the SBDG footprint. Drag to orbit, scroll to zoom, and select a development to bring it forward.</p>
+          <p class="mapsec__sub">An interactive massing model of where we build. Switch
+            between New York and Miami, drag to orbit, and select a development to bring
+            it forward.</p>
         </div>
         <div class="map" id="map">
           <canvas class="map__canvas" id="mapCanvas"></canvas>
           <div class="map__hud">
-            <div class="map__badge"><b></b> SBDG Footprint — Live Model</div>
+            <div class="map__badge"><b></b> <span id="mapCityLabel">New York</span> · Live Model</div>
             <div class="map__hint">Drag to <span>orbit</span> · Scroll to <span>zoom</span> · Click a tower</div>
           </div>
+
           <div class="map__panel" id="mapPanel">
-            <button class="map__proj" data-proj="0">
-              <span class="map__proj-no">01</span>
-              <span><span class="map__proj-name">Vela</span><span class="map__proj-loc">Edgewater · Miami</span></span>
-              <span class="map__proj-val">$300M</span>
-            </button>
-            <button class="map__proj" data-proj="1">
-              <span class="map__proj-no">02</span>
-              <span><span class="map__proj-name">Cove Miami</span><span class="map__proj-loc">Edgewater · Miami</span></span>
-              <span class="map__proj-val">$200M</span>
-            </button>
-            <button class="map__proj" data-proj="2">
-              <span class="map__proj-no">03</span>
-              <span><span class="map__proj-name">Silver Star</span><span class="map__proj-loc">Long Island City</span></span>
-              <span class="map__proj-val">135K SF</span>
-            </button>
-            <button class="map__proj" data-proj="3">
-              <span class="map__proj-no">04</span>
-              <span><span class="map__proj-name">The LIC</span><span class="map__proj-loc">Long Island City</span></span>
-              <span class="map__proj-val">86 Units</span>
-            </button>
+            <div class="map__toggle" role="tablist">
+              <button class="map__city active" data-city="ny" role="tab">New York</button>
+              <button class="map__city" data-city="mia" role="tab">Miami</button>
+            </div>
+            <div class="map__list" data-citylist="ny">
+              <button class="map__proj" data-city="ny" data-proj="0">
+                <span class="map__proj-no">01</span>
+                <span><span class="map__proj-name">Silver Star</span><span class="map__proj-loc">Long Island City, NY</span></span>
+                <span class="map__proj-val">135K SF</span>
+              </button>
+              <button class="map__proj" data-city="ny" data-proj="1">
+                <span class="map__proj-no">02</span>
+                <span><span class="map__proj-name">The LIC</span><span class="map__proj-loc">Long Island City, NY</span></span>
+                <span class="map__proj-val">86 Units</span>
+              </button>
+            </div>
+            <div class="map__list" data-citylist="mia" hidden>
+              <button class="map__proj" data-city="mia" data-proj="0">
+                <span class="map__proj-no">01</span>
+                <span><span class="map__proj-name">Vela</span><span class="map__proj-loc">Edgewater, Miami</span></span>
+                <span class="map__proj-val">$300M</span>
+              </button>
+              <button class="map__proj" data-city="mia" data-proj="1">
+                <span class="map__proj-no">02</span>
+                <span><span class="map__proj-name">Cove Miami</span><span class="map__proj-loc">Edgewater, Miami</span></span>
+                <span class="map__proj-val">$200M</span>
+              </button>
+            </div>
           </div>
+
           <div class="map__tip" id="mapTip"></div>
-          <div class="map__loading" id="mapLoading">Building model…</div>
+          <div class="map__loading" id="mapLoading">Building model</div>
           <div class="map__fallback">
-            <p>Your browser can't render the live 3D model — explore the developments below.</p>
+            <p>Your browser cannot render the live 3D model. Explore the developments below.</p>
           </div>
         </div>
       </div>
@@ -311,10 +314,10 @@
               <span class="project__value">$300M</span>
             </div>
             <p class="project__meta">Edgewater · Miami, FL</p>
-            <p class="project__desc">A 55-story waterfront tower overlooking Margaret Pace
-              Park — a new era of accessible luxury living on Biscayne Bay.</p>
+            <p class="project__desc">A 55 story waterfront tower on Biscayne Bay,
+              overlooking Margaret Pace Park.</p>
             <ul class="project__facts">
-              <li>55 Stories</li><li>Waterfront</li><li>High-Rise Condominium</li>
+              <li>55 Stories</li><li>Waterfront</li><li>High Rise Condominium</li>
             </ul>
           </div>
         </article>
@@ -330,8 +333,8 @@
               <span class="project__value">$200M</span>
             </div>
             <p class="project__meta">Edgewater · Miami, FL</p>
-            <p class="project__desc">A boutique, Kobi Karp–designed waterfront condominium of
-              134 residences — ground-up development of uncompromising quality.</p>
+            <p class="project__desc">A boutique waterfront condominium of 134 residences,
+              designed by Kobi Karp.</p>
             <ul class="project__facts">
               <li>134 Residences</li><li>Boutique Waterfront</li><li>Completion 2028</li>
             </ul>
@@ -349,10 +352,10 @@
               <span class="project__value">135K SF</span>
             </div>
             <p class="project__meta">Long Island City · Queens, NY</p>
-            <p class="project__desc">A 10-story mixed-use landmark pairing a flagship
-              Mercedes-Benz dealership with 85 residential rentals.</p>
+            <p class="project__desc">A 10 story mixed use landmark pairing a flagship
+              Mercedes Benz dealership with 85 rental residences.</p>
             <ul class="project__facts">
-              <li>10 Stories</li><li>Mixed-Use</li><li>85 Residences</li>
+              <li>10 Stories</li><li>Mixed Use</li><li>85 Residences</li>
             </ul>
           </div>
         </article>
@@ -364,14 +367,14 @@
           </div>
           <div class="project__info">
             <div class="project__top">
-              <h3 class="project__name">The LIC Condominium</h3>
+              <h3 class="project__name">The LIC</h3>
               <span class="project__value">86 Units</span>
             </div>
             <p class="project__meta">Long Island City · Queens, NY</p>
-            <p class="project__desc">A ground-up condominium delivering refined, design-forward
-              residences to one of New York's fastest-growing neighborhoods.</p>
+            <p class="project__desc">A ground up condominium bringing refined residences
+              to one of New York's fastest growing neighborhoods.</p>
             <ul class="project__facts">
-              <li>86 Residences</li><li>Ground-Up</li><li>Condominium</li>
+              <li>86 Residences</li><li>Ground Up</li><li>Condominium</li>
             </ul>
           </div>
         </article>
@@ -379,46 +382,46 @@
       </div>
     </section>
 
-    <!-- ============ FEATURE / QUOTE BAND ============ -->
+    <!-- ============ STATEMENT BAND ============ -->
     <section class="band">
       <div class="band__bg" data-parallax="0.12" aria-hidden="true"></div>
       <blockquote class="band__quote" data-split>
-        “We don't hand our vision to someone else to build. We build it ourselves —
-        and that is the difference you can stand inside.”
+        We control capital, design, and construction under one roof. That is how we
+        protect quality, schedule, and value.
       </blockquote>
-      <span class="band__attr" data-reveal>— SB Development Group</span>
+      <span class="band__attr" data-reveal>SB Development Group</span>
     </section>
 
     <!-- ============ LEADERSHIP ============ -->
     <section class="leadership" id="leadership">
       <div class="section-head">
-        <span class="section-index" data-reveal>04 — Leadership</span>
+        <span class="section-index" data-reveal>04 / Leadership</span>
         <h2 class="leadership__title" data-split>The founders</h2>
       </div>
 
       <div class="leaders">
-        <article class="leader" data-reveal data-cursor="">
+        <article class="leader" data-reveal>
           <div class="leader__media"><div class="leader__img" data-img="roni"></div></div>
           <div class="leader__body">
             <h3 class="leader__name">Roni Benjamini</h3>
-            <span class="leader__role">Co-Founder &amp; Principal · CEO, 1 Oak Construction</span>
-            <p class="leader__bio">Twenty years of hands-on construction and project management,
-              with more than two million square feet of commercial, mixed-use, and luxury
-              residential delivered across the New York metropolitan area. Previously at Turner
-              Construction (Goldman Sachs Tower) and Bovis Lend Lease. MBA, NYU Stern;
-              Engineering, The Cooper Union.</p>
+            <span class="leader__role">Co Founder and Principal</span>
+            <p class="leader__bio">Twenty years of hands on construction and project
+              management, with more than two million square feet of commercial, mixed use,
+              and luxury residential delivered across the New York metropolitan area.
+              Previously at Turner Construction (Goldman Sachs Tower) and Bovis Lend Lease.
+              MBA, NYU Stern. Engineering, The Cooper Union.</p>
           </div>
         </article>
 
-        <article class="leader" data-reveal data-cursor="">
+        <article class="leader" data-reveal>
           <div class="leader__media"><div class="leader__img" data-img="joseph"></div></div>
           <div class="leader__body">
             <h3 class="leader__name">Joseph Stern</h3>
-            <span class="leader__role">Co-Founder &amp; Principal</span>
-            <p class="leader__bio">A founder of SB Development Group, bringing a background that
-              unites development, acquisitions, and finance. He has helped guide the firm's
-              expansion from New York's outer boroughs to a multi-billion-dollar pipeline
-              reshaping the South Florida skyline.</p>
+            <span class="leader__role">Co Founder and Principal</span>
+            <p class="leader__bio">A founder of SB Development Group with a background
+              across development, acquisitions, and finance. He has helped guide the firm's
+              growth from New York's outer boroughs to a multi billion dollar pipeline
+              in South Florida.</p>
           </div>
         </article>
       </div>
@@ -427,7 +430,7 @@
     <!-- ============ CONTACT / CTA ============ -->
     <section class="contact" id="contact">
       <div class="contact__inner">
-        <span class="section-index light" data-reveal>05 — Connect</span>
+        <span class="section-index light" data-reveal>05 / Connect</span>
         <h2 class="contact__title">
           <span class="line"><span class="word">Let's build</span></span>
           <span class="line"><span class="word italic">something</span> <span class="word">lasting.</span></span>
@@ -460,13 +463,12 @@
   <footer class="footer">
     <div class="footer__big" aria-hidden="true"><span data-reveal-foot>SB&nbsp;DEVELOPMENT</span></div>
     <div class="footer__row">
-      <span class="footer__brand">SB Development Group · 1 Oak Construction</span>
+      <span class="footer__brand">SB Development Group</span>
       <span class="footer__copy">© <span id="year"></span> SB Development Group. All rights reserved.</span>
       <a href="#top" class="footer__top" data-cursor="up">Back to top ↑</a>
     </div>
   </footer>
 
-  <!-- GSAP + ScrollTrigger + Lenis (graceful enhancement; site is fully usable without) -->
   <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/@studio-freight/lenis@1.0.42/dist/lenis.min.js"></script>
