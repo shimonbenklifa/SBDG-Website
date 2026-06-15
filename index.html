@@ -257,6 +257,47 @@
         <h2 class="portfolio__title" data-split>Selected developments</h2>
       </div>
 
+      <!-- ===== INTERACTIVE 3D MASSING MAP ===== -->
+      <div class="mapsec" data-reveal>
+        <div class="mapsec__head">
+          <p class="mapsec__sub">An interactive massing model of the SBDG footprint. Drag to orbit, scroll to zoom, and select a development to bring it forward.</p>
+        </div>
+        <div class="map" id="map">
+          <canvas class="map__canvas" id="mapCanvas"></canvas>
+          <div class="map__hud">
+            <div class="map__badge"><b></b> SBDG Footprint — Live Model</div>
+            <div class="map__hint">Drag to <span>orbit</span> · Scroll to <span>zoom</span> · Click a tower</div>
+          </div>
+          <div class="map__panel" id="mapPanel">
+            <button class="map__proj" data-proj="0">
+              <span class="map__proj-no">01</span>
+              <span><span class="map__proj-name">Vela</span><span class="map__proj-loc">Edgewater · Miami</span></span>
+              <span class="map__proj-val">$300M</span>
+            </button>
+            <button class="map__proj" data-proj="1">
+              <span class="map__proj-no">02</span>
+              <span><span class="map__proj-name">Cove Miami</span><span class="map__proj-loc">Edgewater · Miami</span></span>
+              <span class="map__proj-val">$200M</span>
+            </button>
+            <button class="map__proj" data-proj="2">
+              <span class="map__proj-no">03</span>
+              <span><span class="map__proj-name">Silver Star</span><span class="map__proj-loc">Long Island City</span></span>
+              <span class="map__proj-val">135K SF</span>
+            </button>
+            <button class="map__proj" data-proj="3">
+              <span class="map__proj-no">04</span>
+              <span><span class="map__proj-name">The LIC</span><span class="map__proj-loc">Long Island City</span></span>
+              <span class="map__proj-val">86 Units</span>
+            </button>
+          </div>
+          <div class="map__tip" id="mapTip"></div>
+          <div class="map__loading" id="mapLoading">Building model…</div>
+          <div class="map__fallback">
+            <p>Your browser can't render the live 3D model — explore the developments below.</p>
+          </div>
+        </div>
+      </div>
+
       <div class="projects">
 
         <article class="project" data-reveal data-cursor="view">
@@ -429,6 +470,12 @@
   <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/@studio-freight/lenis@1.0.42/dist/lenis.min.js"></script>
+
+  <!-- Three.js for the interactive massing model (graceful fallback if unavailable) -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/three@0.128.0/examples/js/controls/OrbitControls.js"></script>
+
   <script src="js/main.js" defer></script>
+  <script src="js/map.js" defer></script>
 </body>
 </html>
