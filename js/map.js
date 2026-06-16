@@ -42,8 +42,8 @@
       // the west, the river with Roosevelt Island and the bridges, and a
       // detailed Long Island City / Queens on the east where the towers sit.
       land: [
-        // Manhattan — east shore (down) then west shore (up); Battery at the tip
-        [[0.30,0.05],[0.34,0.09],[0.385,0.18],[0.41,0.28],[0.425,0.38],[0.43,0.47],[0.425,0.55],[0.405,0.63],[0.375,0.72],[0.34,0.80],[0.305,0.88],[0.275,0.93],[0.235,0.88],[0.215,0.80],[0.195,0.70],[0.175,0.60],[0.165,0.50],[0.165,0.40],[0.175,0.30],[0.195,0.20],[0.235,0.10]],
+        // Manhattan — east shore (down, with midtown bulge) then west shore (up); Battery at the tip
+        [[0.31,0.045],[0.345,0.085],[0.375,0.135],[0.40,0.21],[0.418,0.29],[0.43,0.37],[0.437,0.44],[0.432,0.50],[0.42,0.56],[0.40,0.62],[0.378,0.68],[0.36,0.73],[0.35,0.785],[0.335,0.83],[0.31,0.875],[0.285,0.915],[0.265,0.94],[0.245,0.90],[0.235,0.84],[0.225,0.77],[0.213,0.69],[0.202,0.60],[0.195,0.51],[0.193,0.42],[0.197,0.34],[0.21,0.25],[0.235,0.16],[0.27,0.09]],
         // Queens + Brooklyn — detailed LIC waterfront: Astoria, Anable Basin inlet,
         // Hunters Point peninsula (juts west), Newtown Creek notch, then Greenpoint/
         // Williamsburg/DUMBO/Brooklyn Heights.
@@ -108,7 +108,7 @@
         { name:'Harmony',     loc:'364 Harman St',   value:'Bushwick', u:0.780, v:0.800, h:5, color:DIM },
         { name:'Woodbine Madison', loc:'65 Woodbine St', value:'Bushwick', u:0.800, v:0.780, h:5, color:DIM },
         { name:'SOLA',        loc:'72‑01 Queens Blvd', value:'Woodside', u:0.800, v:0.430, h:11, color:DIM },
-        { name:'61W104',      loc:'61 W 104th St',   value:'Upper West Side', u:0.215, v:0.190, h:6, color:DIM },
+        { name:'61W104',      loc:'61 W 104th St',   value:'Upper West Side', u:0.250, v:0.180, h:6, color:DIM },
         { name:'166E100',     loc:'166 E 100th St',  value:'East Harlem', u:0.380, v:0.205, h:7, color:DIM },
         { name:'Art House',   loc:'148 1st St',      value:'Jersey City', u:0.030, v:0.580, h:9, color:DIM }
       ]
@@ -339,7 +339,8 @@
         data.push({ x:w.x, z:w.z, w:fw, d:fd, h:h });
       }
     }
-    var mat = new THREE.MeshStandardMaterial({ color: 0xdfe6ec, roughness: 0.82, metalness: 0.02 });
+    var mat = new THREE.MeshStandardMaterial({ color: 0xdfe6ec, roughness: 0.82, metalness: 0.02,
+      transparent: true, opacity: 0.36, depthWrite: false });
     buildings = new THREE.InstancedMesh(new THREE.BoxGeometry(1,1,1), mat, data.length);
     buildings.castShadow = true; buildings.receiveShadow = true; buildings.userData.data = data;
     var col = new THREE.Color();
