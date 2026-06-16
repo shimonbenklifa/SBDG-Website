@@ -375,6 +375,7 @@ body.cursor-label .cursor__dot { opacity: 0; }
 .slide__img[data-img="nova"]   { background-image: radial-gradient(90% 70% at 60% 10%, rgba(143,176,199,0.18), transparent 60%), repeating-linear-gradient(90deg, transparent 0 36px, rgba(143,176,199,0.06) 36px 37px), linear-gradient(150deg,#1a2531,#0c0f15); }
 .slide__img[data-img="domi"]   { background-image: radial-gradient(80% 70% at 35% 14%, rgba(142,168,143,0.16), transparent 60%), repeating-linear-gradient(0deg, transparent 0 38px, rgba(143,176,199,0.06) 38px 39px), linear-gradient(150deg,#172029,#0c0f15); }
 .slide__img[data-img="rise"]   { background-image: radial-gradient(90% 70% at 50% 8%, rgba(143,176,199,0.16), transparent 60%), repeating-linear-gradient(90deg, transparent 0 34px, rgba(143,176,199,0.06) 34px 35px), linear-gradient(150deg,#1b2431,#0c0f15); }
+.slide__img[data-img="dime"]   { background-image: radial-gradient(85% 70% at 45% 10%, rgba(142,168,143,0.18), transparent 60%), repeating-linear-gradient(0deg, transparent 0 36px, rgba(143,176,199,0.06) 36px 37px), linear-gradient(150deg,#192430,#0c0f15); }
 .leader__img[data-img="roni"]    { background-image:
     radial-gradient(70% 60% at 50% 30%, rgba(179,204,219,0.22), transparent 65%),
     linear-gradient(180deg, #2a2f36, #14171c); }

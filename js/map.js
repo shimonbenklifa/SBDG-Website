@@ -69,6 +69,7 @@
         { t:'ASTORIA', u:0.74, v:0.17, rot:0, c:'rgba(150,170,185,0.38)', size:9 },
         { t:'QUEENS', u:0.87, v:0.30, rot:0, c:'rgba(150,170,185,0.38)' },
         { t:'GREENPOINT', u:0.635, v:0.62, rot:0, c:'rgba(150,170,185,0.36)', size:8 },
+        { t:'WILLIAMSBURG', u:0.65, v:0.74, rot:0, c:'rgba(150,170,185,0.36)', size:8 },
         { t:'DUMBO', u:0.55, v:0.87, rot:0, c:'rgba(150,170,185,0.36)', size:7 },
         { t:'BROOKLYN', u:0.78, v:0.92, rot:0, c:'rgba(150,170,185,0.45)' },
         { t:'NEW JERSEY', u:0.02, v:0.5, rot:-Math.PI/2, c:'rgba(150,170,185,0.30)', size:9 },
@@ -80,15 +81,17 @@
       tall: [
         { u:0.33,  v:0.45, su:0.05,  sv:0.11, amp:17 },  // midtown
         { u:0.30,  v:0.85, su:0.04,  sv:0.06, amp:14 },  // lower manhattan
-        { u:0.585, v:0.43, su:0.05,  sv:0.07, amp:13 },  // long island city (Court Sq)
+        { u:0.585, v:0.42, su:0.05,  sv:0.07, amp:13 },  // long island city
         { u:0.60,  v:0.90, su:0.05,  sv:0.06, amp:9 }    // downtown brooklyn
       ],
-      // Dutch Kills / Court Square cluster, inland of the Hunters Point waterfront
+      // Long Island City cluster (Dutch Kills) + The Dime in Williamsburg.
+      // Tower heights are scaled from each building's real story count.
       projects: [
-        { name:'Silver Star', value:'135K SF', u:0.585, v:0.36,  h:14, color:BLUE },
-        { name:'NOVA',        value:'86 Units', u:0.575, v:0.42,  h:17, color:SAGE },
-        { name:'DŌMI',        value:'LIC',     u:0.598, v:0.44,  h:13, color:BLUE },
-        { name:'Rise LIC',    value:'31 Units', u:0.585, v:0.465, h:12, color:SAGE }
+        { name:'Silver Star', value:'10 Stories', u:0.585, v:0.34,  h:8,  color:BLUE },
+        { name:'NOVA',        value:'24 Stories', u:0.575, v:0.40,  h:19, color:SAGE },
+        { name:'DŌMI',        value:'12 Stories', u:0.600, v:0.43,  h:10, color:BLUE },
+        { name:'Rise LIC',    value:'11 Stories', u:0.588, v:0.455, h:9,  color:SAGE },
+        { name:'The Dime',    value:'23 Stories', u:0.55,  v:0.71,  h:18, color:BLUE }
       ]
     },
     mia: {
@@ -113,8 +116,8 @@
         { u:0.47, v:0.45, su:0.04, sv:0.14, amp:10 }   // waterfront cluster
       ],
       projects: [
-        { name:'Vela',     value:'$300M', u:0.474, v:0.50, h:26, color:BLUE },
-        { name:'The Cove', value:'$200M', u:0.482, v:0.43, h:20, color:SAGE }
+        { name:'Vela',     value:'55 Stories', u:0.474, v:0.50, h:40, color:BLUE },
+        { name:'The Cove', value:'40 Stories', u:0.482, v:0.43, h:30, color:SAGE }
       ]
     }
   };
