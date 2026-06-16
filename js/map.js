@@ -42,8 +42,55 @@
       // the west, the river with Roosevelt Island and the bridges, and a
       // detailed Long Island City / Queens on the east where the towers sit.
       land: [
-        // Manhattan — east shore (down, with midtown bulge) then west shore (up); Battery at the tip
-        [[0.31,0.045],[0.345,0.085],[0.375,0.135],[0.40,0.21],[0.418,0.29],[0.43,0.37],[0.437,0.44],[0.432,0.50],[0.42,0.56],[0.40,0.62],[0.378,0.68],[0.36,0.73],[0.35,0.785],[0.335,0.83],[0.31,0.875],[0.285,0.915],[0.265,0.94],[0.245,0.90],[0.235,0.84],[0.225,0.77],[0.213,0.69],[0.202,0.60],[0.195,0.51],[0.193,0.42],[0.197,0.34],[0.21,0.25],[0.235,0.16],[0.27,0.09]],
+        // Manhattan island — traced east shore south then west shore north.
+        // Inwood/Fort Tryon at top (narrow ~0.10 wide), Washington Heights widens slightly,
+        // Harlem / Upper East plateau, Midtown east bulge (widest ~0.145 at v≈0.40),
+        // Murray Hill narrows, Chelsea/Greenwich tucks west, FiDi tapers, Battery tip at bottom.
+        [
+          // ---- east shore, Inwood→Battery ----
+          [0.278,0.048],  // Inwood Hill tip NE
+          [0.296,0.075],  // Dyckman St area
+          [0.308,0.115],  // Washington Heights mid
+          [0.322,0.165],  // W 155th / Harlem River
+          [0.337,0.210],  // E 125th (Harlem)
+          [0.352,0.252],  // E 96th St
+          [0.370,0.300],  // E 79th St / UES
+          [0.392,0.348],  // E 59th St (corner, midtown bulge begins)
+          [0.408,0.390],  // E 42nd St (widest point)
+          [0.412,0.430],  // E 34th St
+          [0.405,0.468],  // E 23rd St (slight recession)
+          [0.394,0.510],  // E 14th / Stuyvesant
+          [0.380,0.555],  // E Houston / LES
+          [0.365,0.600],  // Delancey / Seaport
+          [0.352,0.640],  // Fulton St
+          [0.338,0.680],  // Maiden Lane
+          [0.318,0.715],  // Wall St area
+          [0.300,0.748],  // Broad St
+          [0.285,0.780],  // Battery place (tapering hard)
+          [0.268,0.810],  // tip peninsula begins
+          [0.255,0.832],  // Battery tip (east edge)
+          [0.245,0.848],  // Battery Park very tip
+          // ---- west shore, Battery→Inwood ----
+          [0.232,0.835],  // Battery west edge
+          [0.218,0.808],  // West St / BPC
+          [0.208,0.778],  // Chambers area
+          [0.200,0.740],  // Tribeca waterfront
+          [0.194,0.700],  // Canal St / SoHo
+          [0.191,0.650],  // Houston / West Village
+          [0.190,0.600],  // 14th St (Chelsea begins, nearly straight)
+          [0.194,0.548],  // 23rd St / Chelsea
+          [0.197,0.490],  // 34th St / Hudson Yards area
+          [0.196,0.440],  // 42nd St (Hell's Kitchen)
+          [0.192,0.390],  // 57th St (straight shore)
+          [0.190,0.340],  // 72nd St / Riverside Dr
+          [0.186,0.290],  // 96th St / Riverside
+          [0.182,0.235],  // 125th St / Manhattanville
+          [0.180,0.182],  // 145th St
+          [0.183,0.130],  // 175th St / Washington Heights
+          [0.193,0.090],  // 190th St / Fort Tryon
+          [0.210,0.060],  // 207th St / Inwood west bank
+          [0.250,0.042]   // Inwood Hill Park tip NW → close to start
+        ],
         // Queens + Brooklyn — detailed LIC waterfront: Astoria, Anable Basin inlet,
         // Hunters Point peninsula (juts west), Newtown Creek notch, then Greenpoint/
         // Williamsburg/DUMBO/Brooklyn Heights.
@@ -340,7 +387,7 @@
       }
     }
     var mat = new THREE.MeshStandardMaterial({ color: 0xdfe6ec, roughness: 0.82, metalness: 0.02,
-      transparent: true, opacity: 0.36, depthWrite: false });
+      transparent: true, opacity: 0.05, depthWrite: false });
     buildings = new THREE.InstancedMesh(new THREE.BoxGeometry(1,1,1), mat, data.length);
     buildings.castShadow = true; buildings.receiveShadow = true; buildings.userData.data = data;
     var col = new THREE.Color();
