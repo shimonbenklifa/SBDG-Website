@@ -415,11 +415,14 @@
     cfg.projects.forEach(function (p, i) {
       var w = uvToWorld(p.u, p.v);
       var grp = new THREE.Group(); grp.position.set(w.x, 0, w.z);
-      var foot = p.feat ? 1.8 : 1.3;
-      var mat = new THREE.MeshStandardMaterial({ color: p.color, roughness: 0.35, metalness: 0.1,
-        emissive: new THREE.Color(p.color).multiplyScalar(0.3), emissiveIntensity: p.feat ? 0.12 : 0.0 });
+      var foot = p.feat ? 2.2 : 1.7;
+      // Our towers render fully opaque and brightly lit so they read as solid
+      // 100% buildings against the 5% ghost cityscape around them.
+      var mat = new THREE.MeshStandardMaterial({ color: p.color, roughness: 0.28, metalness: 0.16,
+        emissive: new THREE.Color(p.color).multiplyScalar(0.55), emissiveIntensity: p.feat ? 0.45 : 0.32 });
       var mesh = new THREE.Mesh(new THREE.BoxGeometry(foot, p.h, foot), mat);
       mesh.position.y = p.h/2; mesh.castShadow = true; mesh.receiveShadow = true;
+      mesh.renderOrder = 5;
       grp.add(mesh);
 
       var pinY = p.h + (p.feat ? 5 : 3);
