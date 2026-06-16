@@ -307,22 +307,61 @@
   }
 
   /* ----------------------------------------------------------
-     11. INFINITE MARQUEES (hero ticker + discipline strip)
+     11. PROPERTIES CAROUSEL
      ---------------------------------------------------------- */
-  function marquee(el, speed) {
-    if (!el || reduce) return;
-    var x = 0;
-    var w = el.scrollWidth / 2;
-    function run() {
-      x -= speed;
-      if (Math.abs(x) >= w) x = 0;
-      el.style.transform = 'translateX(' + x + 'px)';
-      requestAnimationFrame(run);
+  (function () {
+    var root = document.getElementById('carousel');
+    if (!root) return;
+    var track = document.getElementById('carTrack');
+    var slides = Array.prototype.slice.call(track.children);
+    var prevBtn = document.getElementById('carPrev');
+    var nextBtn = document.getElementById('carNext');
+    var curEl = document.getElementById('carCur');
+    var totalEl = document.getElementById('carTotal');
+    var dotsWrap = document.getElementById('carDots');
+    var n = slides.length, i = 0, timer = null, delay = 6000;
+    if (!n) return;
+    if (totalEl) totalEl.textContent = ('0' + n).slice(-2);
+
+    var dots = [];
+    for (var d = 0; d < n; d++) {
+      var b = document.createElement('button');
+      b.className = 'carousel__dot';
+      b.setAttribute('aria-label', 'Go to property ' + (d + 1));
+      (function (idx) { b.addEventListener('click', function () { go(idx); restart(); }); })(d);
+      dotsWrap.appendChild(b); dots.push(b);
     }
-    run();
-  }
-  var strip = document.querySelector('.strip__track');
-  marquee(strip, 0.7);
+
+    function go(idx) {
+      i = (idx + n) % n;
+      track.style.transform = 'translateX(' + (-i * 100) + '%)';
+      slides.forEach(function (s, k) { s.classList.toggle('is-active', k === i); });
+      dots.forEach(function (x, k) { x.classList.toggle('active', k === i); });
+      if (curEl) curEl.textContent = ('0' + (i + 1)).slice(-2);
+    }
+    function nextS() { go(i + 1); }
+    function prevS() { go(i - 1); }
+    function start() { if (!reduce && !timer) timer = setInterval(nextS, delay); }
+    function stop() { if (timer) { clearInterval(timer); timer = null; } }
+    function restart() { stop(); start(); }
+
+    if (nextBtn) nextBtn.addEventListener('click', function () { nextS(); restart(); });
+    if (prevBtn) prevBtn.addEventListener('click', function () { prevS(); restart(); });
+    root.addEventListener('mouseenter', stop);
+    root.addEventListener('mouseleave', start);
+
+    // drag / swipe
+    var sx = 0, dx = 0, dragging = false;
+    track.addEventListener('pointerdown', function (e) { dragging = true; sx = e.clientX; dx = 0; stop(); });
+    window.addEventListener('pointermove', function (e) { if (dragging) dx = e.clientX - sx; });
+    window.addEventListener('pointerup', function () {
+      if (!dragging) return; dragging = false;
+      if (Math.abs(dx) > 60) { dx < 0 ? nextS() : prevS(); }
+      start();
+    });
+
+    go(0); start();
+  })();
 
   /* ----------------------------------------------------------
      12. FOOTER big-word reveal + year

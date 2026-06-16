@@ -38,46 +38,52 @@
   var CITIES = {
     ny: {
       label: 'New York',
+      // A focused view of the East River corridor: Manhattan at full scale on
+      // the west, the river with Roosevelt Island and the bridges, and a
+      // detailed Long Island City / Queens on the east where the towers sit.
       land: [
-        // Manhattan (tapered island, Battery at the south tip)
-        [[0.40,0.045],[0.435,0.10],[0.45,0.20],[0.455,0.30],[0.465,0.40],[0.45,0.50],[0.43,0.60],[0.405,0.70],[0.385,0.80],[0.36,0.885],[0.335,0.82],[0.325,0.72],[0.315,0.60],[0.305,0.48],[0.30,0.36],[0.305,0.26],[0.32,0.16],[0.36,0.075]],
+        // Manhattan (full island, Battery at the south tip)
+        [[0.30,0.05],[0.36,0.10],[0.40,0.20],[0.43,0.32],[0.445,0.44],[0.435,0.54],[0.415,0.64],[0.39,0.74],[0.36,0.83],[0.33,0.90],[0.295,0.94],[0.26,0.89],[0.24,0.79],[0.225,0.67],[0.215,0.55],[0.21,0.43],[0.215,0.31],[0.225,0.20],[0.25,0.10]],
         // Queens + Brooklyn (waterfront bulges in at Long Island City)
-        [[0.62,0.04],[0.97,0.04],[0.97,0.97],[0.50,0.97],[0.52,0.88],[0.55,0.80],[0.575,0.72],[0.585,0.62],[0.565,0.55],[0.55,0.48],[0.565,0.40],[0.585,0.30],[0.60,0.18]],
+        [[0.60,0.04],[0.98,0.04],[0.98,0.96],[0.55,0.96],[0.555,0.85],[0.545,0.74],[0.535,0.64],[0.55,0.56],[0.535,0.48],[0.55,0.40],[0.575,0.30],[0.59,0.18]],
         // Roosevelt Island
-        [[0.495,0.345],[0.505,0.345],[0.505,0.50],[0.495,0.50]],
+        [[0.475,0.33],[0.487,0.33],[0.487,0.52],[0.475,0.52]],
         // New Jersey (far bank of the Hudson)
-        [[0.0,0.02],[0.065,0.02],[0.05,0.98],[0.0,0.98]]
+        [[0.0,0.02],[0.055,0.02],[0.04,0.98],[0.0,0.98]]
       ],
-      park: { u0:0.352, u1:0.412, v0:0.155, v1:0.30, color:'#aebfa6' },
+      park: { u0:0.275, u1:0.365, v0:0.155, v1:0.31, color:'#aebfa6' },
       bridges: [
-        { a:[0.462,0.40],  b:[0.566,0.405] }, // Queensboro / 59th St
-        { a:[0.43,0.61],   b:[0.576,0.652] }, // Williamsburg
-        { a:[0.40,0.71],   b:[0.552,0.752] }, // Manhattan
-        { a:[0.388,0.756], b:[0.536,0.796] }  // Brooklyn
+        { a:[0.445,0.43],  b:[0.55,0.43]  }, // Queensboro / 59th St
+        { a:[0.415,0.65],  b:[0.55,0.70]  }, // Williamsburg
+        { a:[0.37,0.81],   b:[0.545,0.85] }, // Manhattan
+        { a:[0.355,0.85],  b:[0.53,0.89]  }  // Brooklyn
       ],
       labels: [
-        { t:'HUDSON RIVER', u:0.185, v:0.55, rot:-Math.PI/2, c:'rgba(120,150,170,0.6)' },
-        { t:'EAST RIVER', u:0.515, v:0.30, rot:-Math.PI/2.1, c:'rgba(120,150,170,0.55)' },
-        { t:'CENTRAL PARK', u:0.382, v:0.227, rot:-Math.PI/2, c:'rgba(80,110,90,0.75)', size:10 },
-        { t:'MANHATTAN', u:0.345, v:0.45, rot:-Math.PI/2, c:'rgba(150,170,185,0.40)' },
-        { t:'LONG ISLAND CITY', u:0.71, v:0.40, rot:0, c:'rgba(150,170,185,0.55)' },
-        { t:'QUEENS', u:0.83, v:0.20, rot:0, c:'rgba(150,170,185,0.40)' },
-        { t:'BROOKLYN', u:0.75, v:0.86, rot:0, c:'rgba(150,170,185,0.45)' },
-        { t:'NEW JERSEY', u:0.028, v:0.5, rot:-Math.PI/2, c:'rgba(150,170,185,0.30)', size:9 },
-        { t:'59TH ST BRIDGE', u:0.513, v:0.372, rot:0, c:'rgba(165,185,200,0.6)', size:8 },
-        { t:'WILLIAMSBURG', u:0.502, v:0.60, rot:0.22, c:'rgba(165,185,200,0.55)', size:8 },
-        { t:'MANHATTAN BR', u:0.476, v:0.705, rot:0.22, c:'rgba(165,185,200,0.5)', size:8 },
-        { t:'BROOKLYN BR', u:0.462, v:0.748, rot:0.22, c:'rgba(165,185,200,0.5)', size:8 }
+        { t:'HUDSON RIVER', u:0.135, v:0.55, rot:-Math.PI/2, c:'rgba(120,150,170,0.6)' },
+        { t:'EAST RIVER', u:0.505, v:0.285, rot:-Math.PI/2.05, c:'rgba(120,150,170,0.55)' },
+        { t:'CENTRAL PARK', u:0.318, v:0.232, rot:-Math.PI/2, c:'rgba(80,110,90,0.75)', size:10 },
+        { t:'MANHATTAN', u:0.305, v:0.55, rot:-Math.PI/2, c:'rgba(150,170,185,0.40)' },
+        { t:'LONG ISLAND CITY', u:0.71, v:0.43, rot:0, c:'rgba(150,170,185,0.6)' },
+        { t:'ASTORIA', u:0.69, v:0.20, rot:0, c:'rgba(150,170,185,0.38)', size:9 },
+        { t:'QUEENS', u:0.86, v:0.30, rot:0, c:'rgba(150,170,185,0.38)' },
+        { t:'BROOKLYN', u:0.74, v:0.88, rot:0, c:'rgba(150,170,185,0.45)' },
+        { t:'NEW JERSEY', u:0.024, v:0.5, rot:-Math.PI/2, c:'rgba(150,170,185,0.30)', size:9 },
+        { t:'59TH ST BRIDGE', u:0.498, v:0.405, rot:0, c:'rgba(165,185,200,0.6)', size:8 },
+        { t:'WILLIAMSBURG', u:0.486, v:0.665, rot:0.22, c:'rgba(165,185,200,0.55)', size:8 },
+        { t:'MANHATTAN BR', u:0.452, v:0.815, rot:0.22, c:'rgba(165,185,200,0.5)', size:8 },
+        { t:'BROOKLYN BR', u:0.438, v:0.858, rot:0.22, c:'rgba(165,185,200,0.5)', size:8 }
       ],
       tall: [
-        { u:0.40,  v:0.34, su:0.05,  sv:0.09, amp:18 },  // midtown
-        { u:0.345, v:0.80, su:0.045, sv:0.07, amp:15 },  // lower manhattan
-        { u:0.58,  v:0.45, su:0.05,  sv:0.07, amp:11 },  // long island city
-        { u:0.62,  v:0.84, su:0.06,  sv:0.08, amp:9 }    // downtown brooklyn
+        { u:0.41, v:0.42, su:0.04,  sv:0.08, amp:22 },  // midtown
+        { u:0.30, v:0.86, su:0.04,  sv:0.06, amp:17 },  // lower manhattan
+        { u:0.60, v:0.45, su:0.045, sv:0.07, amp:14 },  // long island city
+        { u:0.62, v:0.86, su:0.05,  sv:0.07, amp:9 }    // downtown brooklyn
       ],
       projects: [
-        { name:'Silver Star', value:'135K SF', u:0.582, v:0.435, h:16, color:BLUE },
-        { name:'The LIC',     value:'86 Units', u:0.560, v:0.470, h:18, color:SAGE }
+        { name:'Silver Star', value:'135K SF', u:0.585, v:0.395, h:14, color:BLUE },
+        { name:'NOVA',        value:'86 Units', u:0.610, v:0.450, h:17, color:SAGE },
+        { name:'DŌMI',        value:'LIC',     u:0.628, v:0.420, h:13, color:BLUE },
+        { name:'Rise LIC',    value:'31 Units', u:0.620, v:0.485, h:12, color:SAGE }
       ]
     },
     mia: {
@@ -88,20 +94,22 @@
         // Miami Beach barrier island (far right strip)
         [[0.88,0.10],[0.96,0.08],[0.96,0.92],[0.88,0.90]]
       ],
-      park: { u0:0.45, u1:0.515, v0:0.26, v1:0.40, color:'#a9c0a4' }, // Margaret Pace Park
+      park: { u0:0.455, u1:0.50, v0:0.30, v1:0.40, color:'#a9c0a4' }, // Margaret Pace Park (waterfront)
       labels: [
-        { t:'BISCAYNE BAY', u:0.69, v:0.52, rot:-Math.PI/2, c:'rgba(120,150,170,0.6)' },
-        { t:'EDGEWATER', u:0.26, v:0.40, rot:0, c:'rgba(150,170,185,0.55)' },
+        { t:'BISCAYNE BAY', u:0.70, v:0.52, rot:-Math.PI/2, c:'rgba(120,150,170,0.6)' },
+        { t:'EDGEWATER', u:0.26, v:0.42, rot:0, c:'rgba(150,170,185,0.55)' },
+        { t:'MARGARET PACE PARK', u:0.452, v:0.35, rot:-Math.PI/2, c:'rgba(80,110,90,0.7)', size:7 },
+        { t:'DOWNTOWN MIAMI', u:0.28, v:0.82, rot:0, c:'rgba(150,170,185,0.45)', size:9 },
         { t:'MIAMI BEACH', u:0.92, v:0.5, rot:Math.PI/2, c:'rgba(150,170,185,0.5)' }
       ],
       tall: [
-        { u:0.30, v:0.80, su:0.08, sv:0.10, amp:15 },  // downtown Miami (south)
-        { u:0.36, v:0.45, su:0.10, sv:0.20, amp:7 },   // edgewater body
-        { u:0.46, v:0.40, su:0.05, sv:0.16, amp:9 }    // waterfront cluster
+        { u:0.28, v:0.82, su:0.07, sv:0.09, amp:16 },  // downtown Miami (south)
+        { u:0.36, v:0.45, su:0.10, sv:0.20, amp:6 },   // edgewater body
+        { u:0.47, v:0.45, su:0.04, sv:0.14, amp:10 }   // waterfront cluster
       ],
       projects: [
-        { name:'Vela',       value:'$300M', u:0.49, v:0.30, h:26, color:BLUE },
-        { name:'Cove Miami', value:'$200M', u:0.47, v:0.47, h:20, color:SAGE }
+        { name:'Vela',     value:'$300M', u:0.482, v:0.43, h:26, color:BLUE },
+        { name:'The Cove', value:'$200M', u:0.474, v:0.50, h:20, color:SAGE }
       ]
     }
   };
@@ -334,17 +342,17 @@
       var w = uvToWorld(p.u, p.v); var grp = new THREE.Group(); grp.position.set(w.x, 0, w.z);
       var mat = new THREE.MeshStandardMaterial({ color: p.color, roughness: 0.35, metalness: 0.1,
         emissive: new THREE.Color(p.color).multiplyScalar(0.25), emissiveIntensity: 0.0 });
-      var mesh = new THREE.Mesh(new THREE.BoxGeometry(2.2, p.h, 2.2), mat);
+      var mesh = new THREE.Mesh(new THREE.BoxGeometry(1.7, p.h, 1.7), mat);
       mesh.position.y = p.h/2; mesh.castShadow = true; mesh.receiveShadow = true;
       mesh.userData = { idx: i, name: p.name, value: p.value, base: p.h, mat: mat };
       grp.add(mesh);
-      var beam = new THREE.Mesh(new THREE.CylinderGeometry(0.06,0.06,10,6),
-        new THREE.MeshBasicMaterial({ color:p.color, transparent:true, opacity:0.5 }));
-      beam.position.y = p.h + 5; grp.add(beam);
-      var glow = glowSprite(p.color); glow.scale.set(6,6,1); glow.position.y = p.h + 11; grp.add(glow);
-      var ring = new THREE.Mesh(new THREE.TorusGeometry(1.5,0.08,8,40),
+      var beam = new THREE.Mesh(new THREE.CylinderGeometry(0.05,0.05,7,6),
+        new THREE.MeshBasicMaterial({ color:p.color, transparent:true, opacity:0.45 }));
+      beam.position.y = p.h + 3.5; grp.add(beam);
+      var glow = glowSprite(p.color); glow.scale.set(4,4,1); glow.position.y = p.h + 7.5; grp.add(glow);
+      var ring = new THREE.Mesh(new THREE.TorusGeometry(1.05,0.06,8,36),
         new THREE.MeshBasicMaterial({ color:p.color, transparent:true, opacity:0.85 }));
-      ring.rotation.x = Math.PI/2; ring.position.y = p.h + 11; grp.add(ring);
+      ring.rotation.x = Math.PI/2; ring.position.y = p.h + 7.5; grp.add(ring);
       grp.userData = { ring: ring, glow: glow };
       grp.scale.y = reduce ? 1 : 0.001;
       cityGroup.add(grp); towers.push(mesh); markers.push(grp);

@@ -126,12 +126,15 @@
       </div>
     </section>
 
-    <!-- ============ DISCIPLINE MARQUEE ============ -->
-    <section class="strip" aria-label="Disciplines">
-      <div class="strip__track">
-        <span>Development</span><b>·</b><span>Construction</span><b>·</b><span>Acquisitions</span><b>·</b><span>Capital</span><b>·</b><span>Design</span><b>·</b>
-        <span>Development</span><b>·</b><span>Construction</span><b>·</b><span>Acquisitions</span><b>·</b><span>Capital</span><b>·</b><span>Design</span><b>·</b>
-      </div>
+    <!-- ============ DISCIPLINES ============ -->
+    <section class="disciplines" aria-label="Disciplines">
+      <ul class="disciplines__row">
+        <li data-reveal><span>01</span>Development</li>
+        <li data-reveal><span>02</span>Construction</li>
+        <li data-reveal><span>03</span>Acquisitions</li>
+        <li data-reveal><span>04</span>Capital</li>
+        <li data-reveal><span>05</span>Design</li>
+      </ul>
     </section>
 
     <!-- ============ ABOUT / FIRM ============ -->
@@ -275,19 +278,29 @@
               </button>
               <button class="map__proj" data-city="ny" data-proj="1">
                 <span class="map__proj-no">02</span>
-                <span><span class="map__proj-name">The LIC</span><span class="map__proj-loc">Long Island City, NY</span></span>
+                <span><span class="map__proj-name">NOVA</span><span class="map__proj-loc">41‑05 29th St · LIC</span></span>
                 <span class="map__proj-val">86 Units</span>
+              </button>
+              <button class="map__proj" data-city="ny" data-proj="2">
+                <span class="map__proj-no">03</span>
+                <span><span class="map__proj-name">DŌMI</span><span class="map__proj-loc">29‑24 40th Ave · LIC</span></span>
+                <span class="map__proj-val">LIC</span>
+              </button>
+              <button class="map__proj" data-city="ny" data-proj="3">
+                <span class="map__proj-no">04</span>
+                <span><span class="map__proj-name">Rise LIC</span><span class="map__proj-loc">29‑17 40th Ave · LIC</span></span>
+                <span class="map__proj-val">31 Units</span>
               </button>
             </div>
             <div class="map__list" data-citylist="mia" hidden>
               <button class="map__proj" data-city="mia" data-proj="0">
                 <span class="map__proj-no">01</span>
-                <span><span class="map__proj-name">Vela</span><span class="map__proj-loc">Edgewater, Miami</span></span>
+                <span><span class="map__proj-name">Vela</span><span class="map__proj-loc">Edgewater · Miami</span></span>
                 <span class="map__proj-val">$300M</span>
               </button>
               <button class="map__proj" data-city="mia" data-proj="1">
                 <span class="map__proj-no">02</span>
-                <span><span class="map__proj-name">Cove Miami</span><span class="map__proj-loc">Edgewater, Miami</span></span>
+                <span><span class="map__proj-name">The Cove</span><span class="map__proj-loc">Edgewater · Miami</span></span>
                 <span class="map__proj-val">$200M</span>
               </button>
             </div>
@@ -301,84 +314,87 @@
         </div>
       </div>
 
-      <div class="projects">
+      <!-- ===== PROPERTIES CAROUSEL ===== -->
+      <div class="carousel" id="carousel" data-reveal>
+        <div class="carousel__head">
+          <span class="carousel__count"><b id="carCur">01</b><i>/</i><span id="carTotal">06</span></span>
+          <div class="carousel__nav">
+            <button class="carousel__btn" id="carPrev" data-cursor="prev" aria-label="Previous property">
+              <svg width="40" height="10" viewBox="0 0 40 10" fill="none"><path d="M40 5H2M6 1L2 5l4 4" stroke="currentColor" stroke-width="1.2"/></svg>
+            </button>
+            <button class="carousel__btn" id="carNext" data-cursor="next" aria-label="Next property">
+              <svg width="40" height="10" viewBox="0 0 40 10" fill="none"><path d="M0 5h38M34 1l4 4-4 4" stroke="currentColor" stroke-width="1.2"/></svg>
+            </button>
+          </div>
+        </div>
 
-        <article class="project" data-reveal data-cursor="view">
-          <div class="project__media">
-            <div class="project__img" data-img="vela" data-parallax="0.1"></div>
-            <span class="project__index">01</span>
-          </div>
-          <div class="project__info">
-            <div class="project__top">
-              <h3 class="project__name">Vela</h3>
-              <span class="project__value">$300M</span>
-            </div>
-            <p class="project__meta">Edgewater · Miami, FL</p>
-            <p class="project__desc">A 55 story waterfront tower on Biscayne Bay,
-              overlooking Margaret Pace Park.</p>
-            <ul class="project__facts">
-              <li>55 Stories</li><li>Waterfront</li><li>High Rise Condominium</li>
-            </ul>
-          </div>
-        </article>
+        <div class="carousel__viewport">
+          <div class="carousel__track" id="carTrack">
 
-        <article class="project project--alt" data-reveal data-cursor="view">
-          <div class="project__media">
-            <div class="project__img" data-img="cove" data-parallax="0.1"></div>
-            <span class="project__index">02</span>
-          </div>
-          <div class="project__info">
-            <div class="project__top">
-              <h3 class="project__name">Cove Miami</h3>
-              <span class="project__value">$200M</span>
-            </div>
-            <p class="project__meta">Edgewater · Miami, FL</p>
-            <p class="project__desc">A boutique waterfront condominium of 134 residences,
-              designed by Kobi Karp.</p>
-            <ul class="project__facts">
-              <li>134 Residences</li><li>Boutique Waterfront</li><li>Completion 2028</li>
-            </ul>
-          </div>
-        </article>
+            <article class="slide">
+              <div class="slide__media"><div class="slide__img" data-img="vela"></div><span class="slide__tag">Miami</span></div>
+              <div class="slide__info">
+                <div class="slide__top"><h3 class="slide__name">Vela</h3><span class="slide__val">$300M</span></div>
+                <p class="slide__loc">Edgewater · Miami, FL</p>
+                <p class="slide__desc">A waterfront condominium on Biscayne Bay, overlooking Margaret Pace Park.</p>
+                <ul class="slide__facts"><li>Waterfront</li><li>Condominium</li><li>Edgewater</li></ul>
+              </div>
+            </article>
 
-        <article class="project" data-reveal data-cursor="view">
-          <div class="project__media">
-            <div class="project__img" data-img="silver" data-parallax="0.1"></div>
-            <span class="project__index">03</span>
-          </div>
-          <div class="project__info">
-            <div class="project__top">
-              <h3 class="project__name">Silver Star Building</h3>
-              <span class="project__value">135K SF</span>
-            </div>
-            <p class="project__meta">Long Island City · Queens, NY</p>
-            <p class="project__desc">A 10 story mixed use landmark pairing a flagship
-              Mercedes Benz dealership with 85 rental residences.</p>
-            <ul class="project__facts">
-              <li>10 Stories</li><li>Mixed Use</li><li>85 Residences</li>
-            </ul>
-          </div>
-        </article>
+            <article class="slide">
+              <div class="slide__media"><div class="slide__img" data-img="cove"></div><span class="slide__tag">Miami</span></div>
+              <div class="slide__info">
+                <div class="slide__top"><h3 class="slide__name">The Cove</h3><span class="slide__val">$200M</span></div>
+                <p class="slide__loc">Edgewater · Miami, FL</p>
+                <p class="slide__desc">A boutique waterfront condominium of 134 residences, designed by Kobi Karp.</p>
+                <ul class="slide__facts"><li>134 Residences</li><li>Boutique</li><li>Completion 2028</li></ul>
+              </div>
+            </article>
 
-        <article class="project project--alt" data-reveal data-cursor="view">
-          <div class="project__media">
-            <div class="project__img" data-img="lic" data-parallax="0.1"></div>
-            <span class="project__index">04</span>
-          </div>
-          <div class="project__info">
-            <div class="project__top">
-              <h3 class="project__name">The LIC</h3>
-              <span class="project__value">86 Units</span>
-            </div>
-            <p class="project__meta">Long Island City · Queens, NY</p>
-            <p class="project__desc">A ground up condominium bringing refined residences
-              to one of New York's fastest growing neighborhoods.</p>
-            <ul class="project__facts">
-              <li>86 Residences</li><li>Ground Up</li><li>Condominium</li>
-            </ul>
-          </div>
-        </article>
+            <article class="slide">
+              <div class="slide__media"><div class="slide__img" data-img="silver"></div><span class="slide__tag">New York</span></div>
+              <div class="slide__info">
+                <div class="slide__top"><h3 class="slide__name">Silver Star Building</h3><span class="slide__val">135K SF</span></div>
+                <p class="slide__loc">Long Island City · Queens, NY</p>
+                <p class="slide__desc">A 10 story mixed use landmark pairing a flagship Mercedes Benz dealership with 85 rental residences.</p>
+                <ul class="slide__facts"><li>10 Stories</li><li>Mixed Use</li><li>85 Residences</li></ul>
+              </div>
+            </article>
 
+            <article class="slide">
+              <div class="slide__media"><div class="slide__img" data-img="nova"></div><span class="slide__tag">New York</span></div>
+              <div class="slide__info">
+                <div class="slide__top"><h3 class="slide__name">NOVA</h3><span class="slide__val">86 Units</span></div>
+                <p class="slide__loc">41‑05 29th Street · Long Island City</p>
+                <p class="slide__desc">Eighty six luxury condominiums with a fitness center, rooftop deck, and Manhattan skyline views.</p>
+                <ul class="slide__facts"><li>86 Residences</li><li>Condominium</li><li>Rooftop</li></ul>
+              </div>
+            </article>
+
+            <article class="slide">
+              <div class="slide__media"><div class="slide__img" data-img="domi"></div><span class="slide__tag">New York</span></div>
+              <div class="slide__info">
+                <div class="slide__top"><h3 class="slide__name">DŌMI</h3><span class="slide__val">LIC</span></div>
+                <p class="slide__loc">29‑24 40th Avenue · Long Island City</p>
+                <p class="slide__desc">A ground up residential condominium in the heart of Long Island City.</p>
+                <ul class="slide__facts"><li>Condominium</li><li>Ground Up</li><li>Long Island City</li></ul>
+              </div>
+            </article>
+
+            <article class="slide">
+              <div class="slide__media"><div class="slide__img" data-img="rise"></div><span class="slide__tag">New York</span></div>
+              <div class="slide__info">
+                <div class="slide__top"><h3 class="slide__name">Rise LIC</h3><span class="slide__val">31 Units</span></div>
+                <p class="slide__loc">29‑17 40th Avenue · Long Island City</p>
+                <p class="slide__desc">An eleven story mixed use building bringing thirty one mixed income residences to Long Island City.</p>
+                <ul class="slide__facts"><li>11 Stories</li><li>Mixed Use</li><li>31 Residences</li></ul>
+              </div>
+            </article>
+
+          </div>
+        </div>
+
+        <div class="carousel__dots" id="carDots" aria-hidden="true"></div>
       </div>
     </section>
 
