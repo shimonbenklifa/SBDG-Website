@@ -42,48 +42,53 @@
       // the west, the river with Roosevelt Island and the bridges, and a
       // detailed Long Island City / Queens on the east where the towers sit.
       land: [
-        // Manhattan (full island, Battery at the south tip)
-        [[0.30,0.05],[0.36,0.10],[0.40,0.20],[0.43,0.32],[0.445,0.44],[0.435,0.54],[0.415,0.64],[0.39,0.74],[0.36,0.83],[0.33,0.90],[0.295,0.94],[0.26,0.89],[0.24,0.79],[0.225,0.67],[0.215,0.55],[0.21,0.43],[0.215,0.31],[0.225,0.20],[0.25,0.10]],
-        // Queens + Brooklyn (waterfront bulges in at Long Island City)
-        [[0.60,0.04],[0.98,0.04],[0.98,0.96],[0.55,0.96],[0.555,0.85],[0.545,0.74],[0.535,0.64],[0.55,0.56],[0.535,0.48],[0.55,0.40],[0.575,0.30],[0.59,0.18]],
+        // Manhattan — east shore (down) then west shore (up); Battery at the tip
+        [[0.30,0.05],[0.34,0.09],[0.385,0.18],[0.41,0.28],[0.425,0.38],[0.43,0.47],[0.425,0.55],[0.405,0.63],[0.375,0.72],[0.34,0.80],[0.305,0.88],[0.275,0.93],[0.235,0.88],[0.215,0.80],[0.195,0.70],[0.175,0.60],[0.165,0.50],[0.165,0.40],[0.175,0.30],[0.195,0.20],[0.235,0.10]],
+        // Queens + Brooklyn — Hunters Point peninsula juts west, Newtown Creek notch below it
+        [[0.58,0.06],[0.98,0.04],[0.98,0.96],[0.46,0.96],[0.455,0.90],[0.47,0.84],[0.495,0.78],[0.515,0.71],[0.535,0.63],[0.55,0.56],[0.515,0.46],[0.53,0.34],[0.55,0.22]],
         // Roosevelt Island
-        [[0.475,0.33],[0.487,0.33],[0.487,0.52],[0.475,0.52]],
+        [[0.47,0.32],[0.485,0.32],[0.49,0.50],[0.475,0.50]],
         // New Jersey (far bank of the Hudson)
-        [[0.0,0.02],[0.055,0.02],[0.04,0.98],[0.0,0.98]]
+        [[0.0,0.02],[0.05,0.02],[0.035,0.98],[0.0,0.98]]
       ],
-      park: { u0:0.275, u1:0.365, v0:0.155, v1:0.31, color:'#aebfa6' },
+      park: { u0:0.27, u1:0.355, v0:0.165, v1:0.335, color:'#aebfa6' },
       bridges: [
-        { a:[0.445,0.43],  b:[0.55,0.43]  }, // Queensboro / 59th St
-        { a:[0.415,0.65],  b:[0.55,0.70]  }, // Williamsburg
-        { a:[0.37,0.81],   b:[0.545,0.85] }, // Manhattan
-        { a:[0.355,0.85],  b:[0.53,0.89]  }  // Brooklyn
+        { a:[0.425,0.375], b:[0.525,0.40] }, // Queensboro / 59th St
+        { a:[0.405,0.63],  b:[0.515,0.70] }, // Williamsburg
+        { a:[0.375,0.72],  b:[0.485,0.81] }, // Manhattan
+        { a:[0.355,0.76],  b:[0.465,0.85] }  // Brooklyn
       ],
       labels: [
-        { t:'HUDSON RIVER', u:0.135, v:0.55, rot:-Math.PI/2, c:'rgba(120,150,170,0.6)' },
-        { t:'EAST RIVER', u:0.505, v:0.285, rot:-Math.PI/2.05, c:'rgba(120,150,170,0.55)' },
-        { t:'CENTRAL PARK', u:0.318, v:0.232, rot:-Math.PI/2, c:'rgba(80,110,90,0.75)', size:10 },
-        { t:'MANHATTAN', u:0.305, v:0.55, rot:-Math.PI/2, c:'rgba(150,170,185,0.40)' },
-        { t:'LONG ISLAND CITY', u:0.71, v:0.43, rot:0, c:'rgba(150,170,185,0.6)' },
-        { t:'ASTORIA', u:0.69, v:0.20, rot:0, c:'rgba(150,170,185,0.38)', size:9 },
-        { t:'QUEENS', u:0.86, v:0.30, rot:0, c:'rgba(150,170,185,0.38)' },
-        { t:'BROOKLYN', u:0.74, v:0.88, rot:0, c:'rgba(150,170,185,0.45)' },
-        { t:'NEW JERSEY', u:0.024, v:0.5, rot:-Math.PI/2, c:'rgba(150,170,185,0.30)', size:9 },
-        { t:'59TH ST BRIDGE', u:0.498, v:0.405, rot:0, c:'rgba(165,185,200,0.6)', size:8 },
-        { t:'WILLIAMSBURG', u:0.486, v:0.665, rot:0.22, c:'rgba(165,185,200,0.55)', size:8 },
-        { t:'MANHATTAN BR', u:0.452, v:0.815, rot:0.22, c:'rgba(165,185,200,0.5)', size:8 },
-        { t:'BROOKLYN BR', u:0.438, v:0.858, rot:0.22, c:'rgba(165,185,200,0.5)', size:8 }
+        { t:'HUDSON RIVER', u:0.085, v:0.55, rot:-Math.PI/2, c:'rgba(120,150,170,0.6)' },
+        { t:'EAST RIVER', u:0.47, v:0.585, rot:-Math.PI/2, c:'rgba(120,150,170,0.55)' },
+        { t:'CENTRAL PARK', u:0.312, v:0.25, rot:-Math.PI/2, c:'rgba(80,110,90,0.75)', size:10 },
+        { t:'MANHATTAN', u:0.285, v:0.60, rot:-Math.PI/2, c:'rgba(150,170,185,0.42)' },
+        { t:'MIDTOWN', u:0.345, v:0.40, rot:0, c:'rgba(150,170,185,0.34)', size:8 },
+        { t:'LONG ISLAND CITY', u:0.71, v:0.42, rot:0, c:'rgba(150,170,185,0.6)' },
+        { t:'HUNTERS POINT', u:0.555, v:0.51, rot:0, c:'rgba(150,170,185,0.4)', size:7 },
+        { t:'ASTORIA', u:0.74, v:0.17, rot:0, c:'rgba(150,170,185,0.38)', size:9 },
+        { t:'QUEENS', u:0.87, v:0.30, rot:0, c:'rgba(150,170,185,0.38)' },
+        { t:'GREENPOINT', u:0.635, v:0.62, rot:0, c:'rgba(150,170,185,0.36)', size:8 },
+        { t:'DUMBO', u:0.55, v:0.87, rot:0, c:'rgba(150,170,185,0.36)', size:7 },
+        { t:'BROOKLYN', u:0.78, v:0.92, rot:0, c:'rgba(150,170,185,0.45)' },
+        { t:'NEW JERSEY', u:0.02, v:0.5, rot:-Math.PI/2, c:'rgba(150,170,185,0.30)', size:9 },
+        { t:'59TH ST BRIDGE', u:0.49, v:0.355, rot:0, c:'rgba(165,185,200,0.6)', size:8 },
+        { t:'WILLIAMSBURG BR', u:0.475, v:0.655, rot:0.28, c:'rgba(165,185,200,0.55)', size:7 },
+        { t:'MANHATTAN BR', u:0.445, v:0.76, rot:0.3, c:'rgba(165,185,200,0.5)', size:7 },
+        { t:'BROOKLYN BR', u:0.43, v:0.80, rot:0.3, c:'rgba(165,185,200,0.5)', size:7 }
       ],
       tall: [
-        { u:0.41, v:0.42, su:0.04,  sv:0.08, amp:22 },  // midtown
-        { u:0.30, v:0.86, su:0.04,  sv:0.06, amp:17 },  // lower manhattan
-        { u:0.60, v:0.45, su:0.045, sv:0.07, amp:14 },  // long island city
-        { u:0.62, v:0.86, su:0.05,  sv:0.07, amp:9 }    // downtown brooklyn
+        { u:0.33,  v:0.45, su:0.05,  sv:0.11, amp:17 },  // midtown
+        { u:0.30,  v:0.85, su:0.04,  sv:0.06, amp:14 },  // lower manhattan
+        { u:0.585, v:0.43, su:0.05,  sv:0.07, amp:13 },  // long island city (Court Sq)
+        { u:0.60,  v:0.90, su:0.05,  sv:0.06, amp:9 }    // downtown brooklyn
       ],
+      // Dutch Kills / Court Square cluster, inland of the Hunters Point waterfront
       projects: [
-        { name:'Silver Star', value:'135K SF', u:0.585, v:0.395, h:14, color:BLUE },
-        { name:'NOVA',        value:'86 Units', u:0.610, v:0.450, h:17, color:SAGE },
-        { name:'DŌMI',        value:'LIC',     u:0.628, v:0.420, h:13, color:BLUE },
-        { name:'Rise LIC',    value:'31 Units', u:0.620, v:0.485, h:12, color:SAGE }
+        { name:'Silver Star', value:'135K SF', u:0.585, v:0.36,  h:14, color:BLUE },
+        { name:'NOVA',        value:'86 Units', u:0.575, v:0.42,  h:17, color:SAGE },
+        { name:'DŌMI',        value:'LIC',     u:0.598, v:0.44,  h:13, color:BLUE },
+        { name:'Rise LIC',    value:'31 Units', u:0.585, v:0.465, h:12, color:SAGE }
       ]
     },
     mia: {
@@ -301,7 +306,7 @@
   }
 
   function buildBuildings() {
-    var data = [], step = 2.25;
+    var data = [], step = 1.95;
     for (var u = 0.03; u <= 0.97; u += step / W) {
       for (var v = 0.03; v <= 0.97; v += step / H) {
         var ju = u + (Math.random()-0.5)*0.012, jv = v + (Math.random()-0.5)*0.008;
