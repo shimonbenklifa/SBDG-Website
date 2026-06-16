@@ -44,8 +44,10 @@
       land: [
         // Manhattan — east shore (down) then west shore (up); Battery at the tip
         [[0.30,0.05],[0.34,0.09],[0.385,0.18],[0.41,0.28],[0.425,0.38],[0.43,0.47],[0.425,0.55],[0.405,0.63],[0.375,0.72],[0.34,0.80],[0.305,0.88],[0.275,0.93],[0.235,0.88],[0.215,0.80],[0.195,0.70],[0.175,0.60],[0.165,0.50],[0.165,0.40],[0.175,0.30],[0.195,0.20],[0.235,0.10]],
-        // Queens + Brooklyn — Hunters Point peninsula juts west, Newtown Creek notch below it
-        [[0.58,0.06],[0.98,0.04],[0.98,0.96],[0.46,0.96],[0.455,0.90],[0.47,0.84],[0.495,0.78],[0.515,0.71],[0.535,0.63],[0.55,0.56],[0.515,0.46],[0.53,0.34],[0.55,0.22]],
+        // Queens + Brooklyn — detailed LIC waterfront: Astoria, Anable Basin inlet,
+        // Hunters Point peninsula (juts west), Newtown Creek notch, then Greenpoint/
+        // Williamsburg/DUMBO/Brooklyn Heights.
+        [[0.58,0.06],[0.98,0.04],[0.98,0.96],[0.46,0.96],[0.455,0.90],[0.47,0.84],[0.495,0.78],[0.515,0.71],[0.535,0.63],[0.555,0.575],[0.515,0.535],[0.505,0.485],[0.52,0.45],[0.54,0.425],[0.518,0.39],[0.535,0.31],[0.555,0.21]],
         // Roosevelt Island
         [[0.47,0.32],[0.485,0.32],[0.49,0.50],[0.475,0.50]],
         // New Jersey (far bank of the Hudson)
@@ -79,18 +81,20 @@
         { t:'BROOKLYN BR', u:0.43, v:0.80, rot:0.3, c:'rgba(165,185,200,0.5)', size:7 }
       ],
       tall: [
-        { u:0.33,  v:0.45, su:0.05,  sv:0.11, amp:17 },  // midtown
-        { u:0.30,  v:0.85, su:0.04,  sv:0.06, amp:14 },  // lower manhattan
-        { u:0.585, v:0.42, su:0.05,  sv:0.07, amp:13 },  // long island city
-        { u:0.60,  v:0.90, su:0.05,  sv:0.06, amp:9 }    // downtown brooklyn
+        { u:0.34,  v:0.43, su:0.055, sv:0.13, amp:30 },  // midtown Manhattan skyline
+        { u:0.30,  v:0.85, su:0.045, sv:0.07, amp:24 },  // lower Manhattan (FiDi)
+        { u:0.555, v:0.49, su:0.035, sv:0.05, amp:36 },  // LIC Court Square supertalls
+        { u:0.525, v:0.55, su:0.03,  sv:0.05, amp:24 },  // Hunters Point South towers
+        { u:0.585, v:0.41, su:0.045, sv:0.06, amp:15 },  // Queens Plaza / Dutch Kills
+        { u:0.60,  v:0.90, su:0.05,  sv:0.06, amp:18 }   // downtown Brooklyn
       ],
       // Long Island City cluster (Dutch Kills) + The Dime in Williamsburg.
       // Tower heights are scaled from each building's real story count.
       projects: [
-        { name:'Silver Star', value:'10 Stories', u:0.585, v:0.34,  h:8,  color:BLUE },
+        { name:'Silver Star', value:'10 Stories', u:0.592, v:0.35,  h:8,  color:BLUE },
         { name:'NOVA',        value:'24 Stories', u:0.575, v:0.40,  h:19, color:SAGE },
-        { name:'DŌMI',        value:'12 Stories', u:0.600, v:0.43,  h:10, color:BLUE },
-        { name:'Rise LIC',    value:'11 Stories', u:0.588, v:0.455, h:9,  color:SAGE },
+        { name:'DŌMI',        value:'12 Stories', u:0.598, v:0.435, h:10, color:BLUE },
+        { name:'Rise LIC',    value:'11 Stories', u:0.586, v:0.45,  h:9,  color:SAGE },
         { name:'The Dime',    value:'23 Stories', u:0.55,  v:0.71,  h:18, color:BLUE }
       ]
     },
@@ -318,7 +322,9 @@
         if (Math.random() < 0.16) continue;
         var w = uvToWorld(ju, jv);
         var h = 1.3 + Math.random()*2.6 + heightBias(ju, jv) * (0.55 + Math.random()*0.7);
-        data.push({ x:w.x, z:w.z, w:1.05+Math.random()*0.7, d:1.05+Math.random()*0.7, h:h });
+        var fw = 0.95 + Math.random()*0.55 + Math.min(h, 42) * 0.016;
+        var fd = 0.95 + Math.random()*0.55 + Math.min(h, 42) * 0.016;
+        data.push({ x:w.x, z:w.z, w:fw, d:fd, h:h });
       }
     }
     var mat = new THREE.MeshStandardMaterial({ color: 0xdfe6ec, roughness: 0.82, metalness: 0.02 });
