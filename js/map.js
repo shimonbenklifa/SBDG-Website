@@ -39,25 +39,45 @@
     ny: {
       label: 'New York',
       land: [
-        // Manhattan (left)
-        [[0.06,0.05],[0.34,0.05],[0.40,0.18],[0.40,0.34],[0.37,0.50],[0.34,0.66],[0.30,0.82],[0.24,0.95],[0.06,0.95]],
-        // Long Island City / Queens (right)
-        [[0.58,0.05],[0.96,0.05],[0.96,0.95],[0.50,0.95],[0.50,0.70],[0.54,0.45],[0.56,0.25]]
+        // Manhattan (tapered island, Battery at the south tip)
+        [[0.40,0.045],[0.435,0.10],[0.45,0.20],[0.455,0.30],[0.465,0.40],[0.45,0.50],[0.43,0.60],[0.405,0.70],[0.385,0.80],[0.36,0.885],[0.335,0.82],[0.325,0.72],[0.315,0.60],[0.305,0.48],[0.30,0.36],[0.305,0.26],[0.32,0.16],[0.36,0.075]],
+        // Queens + Brooklyn (waterfront bulges in at Long Island City)
+        [[0.62,0.04],[0.97,0.04],[0.97,0.97],[0.50,0.97],[0.52,0.88],[0.55,0.80],[0.575,0.72],[0.585,0.62],[0.565,0.55],[0.55,0.48],[0.565,0.40],[0.585,0.30],[0.60,0.18]],
+        // Roosevelt Island
+        [[0.495,0.345],[0.505,0.345],[0.505,0.50],[0.495,0.50]],
+        // New Jersey (far bank of the Hudson)
+        [[0.0,0.02],[0.065,0.02],[0.05,0.98],[0.0,0.98]]
       ],
-      park: { u0:0.19, u1:0.29, v0:0.20, v1:0.44, color:'#aebfa6' },
+      park: { u0:0.352, u1:0.412, v0:0.155, v1:0.30, color:'#aebfa6' },
+      bridges: [
+        { a:[0.462,0.40],  b:[0.566,0.405] }, // Queensboro / 59th St
+        { a:[0.43,0.61],   b:[0.576,0.652] }, // Williamsburg
+        { a:[0.40,0.71],   b:[0.552,0.752] }, // Manhattan
+        { a:[0.388,0.756], b:[0.536,0.796] }  // Brooklyn
+      ],
       labels: [
-        { t:'MANHATTAN', u:0.165, v:0.66, rot:-Math.PI/2, c:'rgba(150,170,185,0.55)' },
-        { t:'EAST RIVER', u:0.46, v:0.42, rot:-Math.PI/2.2, c:'rgba(120,150,170,0.6)' },
-        { t:'LONG ISLAND CITY', u:0.74, v:0.30, rot:0, c:'rgba(150,170,185,0.55)' }
+        { t:'HUDSON RIVER', u:0.185, v:0.55, rot:-Math.PI/2, c:'rgba(120,150,170,0.6)' },
+        { t:'EAST RIVER', u:0.515, v:0.30, rot:-Math.PI/2.1, c:'rgba(120,150,170,0.55)' },
+        { t:'CENTRAL PARK', u:0.382, v:0.227, rot:-Math.PI/2, c:'rgba(80,110,90,0.75)', size:10 },
+        { t:'MANHATTAN', u:0.345, v:0.45, rot:-Math.PI/2, c:'rgba(150,170,185,0.40)' },
+        { t:'LONG ISLAND CITY', u:0.71, v:0.40, rot:0, c:'rgba(150,170,185,0.55)' },
+        { t:'QUEENS', u:0.83, v:0.20, rot:0, c:'rgba(150,170,185,0.40)' },
+        { t:'BROOKLYN', u:0.75, v:0.86, rot:0, c:'rgba(150,170,185,0.45)' },
+        { t:'NEW JERSEY', u:0.028, v:0.5, rot:-Math.PI/2, c:'rgba(150,170,185,0.30)', size:9 },
+        { t:'59TH ST BRIDGE', u:0.513, v:0.372, rot:0, c:'rgba(165,185,200,0.6)', size:8 },
+        { t:'WILLIAMSBURG', u:0.502, v:0.60, rot:0.22, c:'rgba(165,185,200,0.55)', size:8 },
+        { t:'MANHATTAN BR', u:0.476, v:0.705, rot:0.22, c:'rgba(165,185,200,0.5)', size:8 },
+        { t:'BROOKLYN BR', u:0.462, v:0.748, rot:0.22, c:'rgba(165,185,200,0.5)', size:8 }
       ],
       tall: [
-        { u:0.33, v:0.30, su:0.06, sv:0.10, amp:16 },  // midtown
-        { u:0.16, v:0.86, su:0.06, sv:0.08, amp:14 },  // downtown
-        { u:0.66, v:0.55, su:0.10, sv:0.18, amp:7 }    // queens
+        { u:0.40,  v:0.34, su:0.05,  sv:0.09, amp:18 },  // midtown
+        { u:0.345, v:0.80, su:0.045, sv:0.07, amp:15 },  // lower manhattan
+        { u:0.58,  v:0.45, su:0.05,  sv:0.07, amp:11 },  // long island city
+        { u:0.62,  v:0.84, su:0.06,  sv:0.08, amp:9 }    // downtown brooklyn
       ],
       projects: [
-        { name:'Silver Star', value:'135K SF', u:0.575, v:0.42, h:16, color:BLUE },
-        { name:'The LIC',     value:'86 Units', u:0.60,  v:0.56, h:18, color:SAGE }
+        { name:'Silver Star', value:'135K SF', u:0.582, v:0.435, h:16, color:BLUE },
+        { name:'The LIC',     value:'86 Units', u:0.560, v:0.470, h:18, color:SAGE }
       ]
     },
     mia: {
@@ -135,11 +155,11 @@
       x.beginPath();
       poly.forEach(function (p, i) { var px=p[0]*cw, py=p[1]*ch; i?x.lineTo(px,py):x.moveTo(px,py); });
       x.closePath();
-      x.fillStyle = idx === 0 ? '#e8edf1' : '#dde3e8'; x.fill();
+      x.fillStyle = idx === 0 ? '#e8edf1' : '#dfe5ea'; x.fill();
       x.save(); x.clip();
-      x.strokeStyle = 'rgba(60,92,114,0.15)'; x.lineWidth = 1;
-      for (var gx=0; gx<=cw; gx+=cw/16){ x.beginPath(); x.moveTo(gx,0); x.lineTo(gx,ch); x.stroke(); }
-      for (var gy=0; gy<=ch; gy+=ch/42){ x.beginPath(); x.moveTo(0,gy); x.lineTo(cw,gy); x.stroke(); }
+      x.strokeStyle = 'rgba(60,92,114,0.14)'; x.lineWidth = 1;
+      for (var gx=0; gx<=cw; gx+=cw/18){ x.beginPath(); x.moveTo(gx,0); x.lineTo(gx,ch); x.stroke(); }
+      for (var gy=0; gy<=ch; gy+=ch/46){ x.beginPath(); x.moveTo(0,gy); x.lineTo(cw,gy); x.stroke(); }
       x.restore();
     });
 
@@ -149,8 +169,22 @@
       x.fill();
     }
 
-    x.font = '600 13px Inter, sans-serif';
-    cfg.labels.forEach(function (l) { x.fillStyle = l.c; label(x, l.t, l.u*cw, l.v*ch, l.rot, 6); });
+    // bridges (drawn over the water gaps)
+    if (cfg.bridges) {
+      x.lineCap = 'round';
+      cfg.bridges.forEach(function (b) {
+        var ax=b.a[0]*cw, ay=b.a[1]*ch, bx=b.b[0]*cw, by=b.b[1]*ch;
+        x.strokeStyle = 'rgba(178,200,216,0.5)'; x.lineWidth = 3.5;
+        x.beginPath(); x.moveTo(ax, ay); x.lineTo(bx, by); x.stroke();
+        x.strokeStyle = 'rgba(20,32,44,0.55)'; x.lineWidth = 1;
+        x.beginPath(); x.moveTo(ax, ay); x.lineTo(bx, by); x.stroke();
+      });
+    }
+
+    cfg.labels.forEach(function (l) {
+      x.font = '600 ' + (l.size || 13) + 'px Inter, sans-serif';
+      x.fillStyle = l.c; label(x, l.t, l.u*cw, l.v*ch, l.rot, l.size ? 4 : 6);
+    });
 
     var tex = new THREE.CanvasTexture(c); tex.anisotropy = 4;
     if (THREE.sRGBEncoding) tex.encoding = THREE.sRGBEncoding;
@@ -179,7 +213,7 @@
     scene.fog = new THREE.Fog(0x0d1016, 95, 270);
 
     camera = new THREE.PerspectiveCamera(40, 1, 0.1, 1000);
-    camera.position.set(58, 54, 76);
+    camera.position.set(60, 60, 84);
     sizeRenderer();
 
     if (THREE.OrbitControls) {
@@ -259,7 +293,7 @@
   }
 
   function buildBuildings() {
-    var data = [], step = 2.15;
+    var data = [], step = 2.25;
     for (var u = 0.03; u <= 0.97; u += step / W) {
       for (var v = 0.03; v <= 0.97; v += step / H) {
         var ju = u + (Math.random()-0.5)*0.012, jv = v + (Math.random()-0.5)*0.008;
