@@ -108,8 +108,8 @@
         { u:0.47, v:0.45, su:0.04, sv:0.14, amp:10 }   // waterfront cluster
       ],
       projects: [
-        { name:'Vela',     value:'$300M', u:0.482, v:0.43, h:26, color:BLUE },
-        { name:'The Cove', value:'$200M', u:0.474, v:0.50, h:20, color:SAGE }
+        { name:'Vela',     value:'$300M', u:0.474, v:0.50, h:26, color:BLUE },
+        { name:'The Cove', value:'$200M', u:0.482, v:0.43, h:20, color:SAGE }
       ]
     }
   };
