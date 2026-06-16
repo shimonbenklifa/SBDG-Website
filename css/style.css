@@ -415,11 +415,15 @@ body.cursor-label .cursor__dot { opacity: 0; }
 
 /* project selector panel */
 .map__panel {
-  position: absolute; top: 1.2rem; right: 1.3rem; width: min(300px, 70vw);
-  pointer-events: auto; display: flex; flex-direction: column; gap: 2px;
-  background: rgba(13,16,22,0.55); backdrop-filter: blur(8px);
+  position: absolute; top: 1.2rem; right: 1.3rem; width: min(320px, 74vw);
+  max-height: calc(100% - 2.4rem);
+  pointer-events: auto; display: flex; flex-direction: column;
+  background: rgba(13,16,22,0.62); backdrop-filter: blur(8px);
   border: 1px solid var(--line); border-radius: 3px; padding: 0.5rem;
 }
+.map__list { flex: 1 1 auto; min-height: 0; overflow-y: auto; overscroll-behavior: contain; }
+.map__list::-webkit-scrollbar { width: 4px; }
+.map__list::-webkit-scrollbar-thumb { background: rgba(143,176,199,0.3); border-radius: 4px; }
 .map__toggle { display: flex; gap: 4px; padding: 0.25rem; margin-bottom: 0.35rem; border-bottom: 1px solid var(--line); }
 .map__city {
   flex: 1; padding: 0.6rem 0.5rem; background: none; border: none; cursor: pointer;
@@ -431,12 +435,14 @@ body.cursor-label .cursor__dot { opacity: 0; }
 .map__list[hidden] { display: none; }
 
 .map__proj {
-  display: grid; grid-template-columns: 26px 1fr auto; align-items: baseline; gap: 0.7rem;
-  padding: 0.85rem 0.8rem; border-radius: 2px; cursor: pointer;
+  display: grid; grid-template-columns: 24px 1fr auto; align-items: baseline; gap: 0.6rem;
+  padding: 0.6rem 0.7rem; border-radius: 2px; cursor: pointer;
   transition: background .3s var(--ease); text-align: left; width: 100%;
   background: none; border: none; color: inherit; font: inherit;
+  border-left: 2px solid transparent;
 }
-.map__proj:hover, .map__proj.active { background: rgba(143,176,199,0.12); }
+.map__proj:hover, .map__proj.hover, .map__proj.active { background: rgba(143,176,199,0.12); }
+.map__proj.feat { border-left-color: var(--accent); }
 .map__proj-no { font-family: var(--serif); font-size: 0.9rem; color: var(--accent); }
 .map__proj-name { font-family: var(--serif); font-size: 1.05rem; color: var(--bone); line-height: 1.1; }
 .map__proj-loc { display:block; font-size: 0.62rem; letter-spacing: 0.14em; text-transform: uppercase; color: var(--muted); margin-top: 2px; }

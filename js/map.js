@@ -32,7 +32,7 @@
   var cityLabelEl = document.getElementById('mapCityLabel');
 
   var W = 80, H = 120;             // board size (x, z)
-  var BLUE = 0x9fc0d6, SAGE = 0x8ea88f;
+  var BLUE = 0x9fc0d6, SAGE = 0x8ea88f, DIM = 0x8aa0ad;
 
   /* ================= CITY DEFINITIONS ================= */
   var CITIES = {
@@ -88,14 +88,29 @@
         { u:0.585, v:0.41, su:0.045, sv:0.06, amp:15 },  // Queens Plaza / Dutch Kills
         { u:0.60,  v:0.90, su:0.05,  sv:0.06, amp:18 }   // downtown Brooklyn
       ],
-      // Long Island City cluster (Dutch Kills) + The Dime in Williamsburg.
-      // Tower heights are scaled from each building's real story count.
+      // Full SBDG portfolio, geolocated. Featured (feat) are the carousel set.
       projects: [
-        { name:'Silver Star', value:'10 Stories', u:0.592, v:0.35,  h:8,  color:BLUE },
-        { name:'NOVA',        value:'24 Stories', u:0.575, v:0.40,  h:19, color:SAGE },
-        { name:'DŌMI',        value:'12 Stories', u:0.598, v:0.435, h:10, color:BLUE },
-        { name:'Rise LIC',    value:'11 Stories', u:0.586, v:0.45,  h:9,  color:SAGE },
-        { name:'The Dime',    value:'23 Stories', u:0.55,  v:0.71,  h:18, color:BLUE }
+        { name:'Silver Star', loc:'37‑14 36th St',   value:'10 Stories', u:0.625, v:0.345, h:8,  feat:true, color:BLUE },
+        { name:'Rise',        loc:'39‑40 30th St',   value:'11 Stories', u:0.610, v:0.410, h:9,  feat:true, color:SAGE },
+        { name:'NOVA',        loc:'41‑05 29th St',   value:'24 Stories', u:0.595, v:0.435, h:19, feat:true, color:BLUE },
+        { name:'DŌMI',        loc:'29‑24 40th Ave',  value:'12 Stories', u:0.608, v:0.420, h:10, feat:true, color:SAGE },
+        { name:'Jackson',     loc:'1333 Jackson Ave', value:'Long Island City', u:0.575, v:0.455, h:12, color:DIM },
+        { name:'Craftsman',   loc:'21‑22 45th Ave',  value:'Long Island City', u:0.566, v:0.480, h:7,  color:DIM },
+        { name:'Industry',    loc:'21‑45 44th Dr',   value:'Long Island City', u:0.577, v:0.470, h:7,  color:DIM },
+        { name:'Decker',      loc:'21‑10 44th Dr',   value:'Long Island City', u:0.560, v:0.465, h:6,  color:DIM },
+        { name:'One Murray Park', loc:'11‑25 45th Ave', value:'Long Island City', u:0.546, v:0.487, h:8, color:DIM },
+        { name:'Kora',        loc:'47‑28 11th St',   value:'Long Island City', u:0.534, v:0.500, h:7,  color:DIM },
+        { name:'Yard',        loc:'2‑26 50th Ave',   value:'Hunters Point', u:0.510, v:0.540, h:9,  color:DIM },
+        { name:'Murano',      loc:'5‑19 Borden Ave', value:'Hunters Point', u:0.522, v:0.552, h:6,  color:DIM },
+        { name:'Five27',      loc:'5‑27 51st Ave',   value:'Hunters Point', u:0.516, v:0.558, h:11, color:DIM },
+        { name:'Powerhouse',  loc:'2‑17 51st Ave',   value:'Hunters Point', u:0.508, v:0.564, h:12, color:DIM },
+        { name:'The Dime',    loc:'275 South 5th St', value:'23 Stories', u:0.550, v:0.720, h:18, feat:true, color:BLUE },
+        { name:'Harmony',     loc:'364 Harman St',   value:'Bushwick', u:0.780, v:0.800, h:5, color:DIM },
+        { name:'Woodbine Madison', loc:'65 Woodbine St', value:'Bushwick', u:0.800, v:0.780, h:5, color:DIM },
+        { name:'SOLA',        loc:'72‑01 Queens Blvd', value:'Woodside', u:0.800, v:0.430, h:11, color:DIM },
+        { name:'61W104',      loc:'61 W 104th St',   value:'Upper West Side', u:0.215, v:0.190, h:6, color:DIM },
+        { name:'166E100',     loc:'166 E 100th St',  value:'East Harlem', u:0.380, v:0.205, h:7, color:DIM },
+        { name:'Art House',   loc:'148 1st St',      value:'Jersey City', u:0.030, v:0.580, h:9, color:DIM }
       ]
     },
     mia: {
@@ -106,11 +121,11 @@
         // Miami Beach barrier island (far right strip)
         [[0.88,0.10],[0.96,0.08],[0.96,0.92],[0.88,0.90]]
       ],
-      park: { u0:0.455, u1:0.50, v0:0.30, v1:0.40, color:'#a9c0a4' }, // Margaret Pace Park (waterfront)
+      park: { u0:0.45, u1:0.50, v0:0.50, v1:0.585, color:'#a9c0a4' }, // Margaret Pace Park (waterfront)
       labels: [
         { t:'BISCAYNE BAY', u:0.70, v:0.52, rot:-Math.PI/2, c:'rgba(120,150,170,0.6)' },
         { t:'EDGEWATER', u:0.26, v:0.42, rot:0, c:'rgba(150,170,185,0.55)' },
-        { t:'MARGARET PACE PARK', u:0.452, v:0.35, rot:-Math.PI/2, c:'rgba(80,110,90,0.7)', size:7 },
+        { t:'MARGARET PACE PARK', u:0.448, v:0.545, rot:-Math.PI/2, c:'rgba(80,110,90,0.7)', size:7 },
         { t:'DOWNTOWN MIAMI', u:0.28, v:0.82, rot:0, c:'rgba(150,170,185,0.45)', size:9 },
         { t:'MIAMI BEACH', u:0.92, v:0.5, rot:Math.PI/2, c:'rgba(150,170,185,0.5)' }
       ],
@@ -120,8 +135,8 @@
         { u:0.47, v:0.45, su:0.04, sv:0.14, amp:10 }   // waterfront cluster
       ],
       projects: [
-        { name:'Vela',     value:'55 Stories', u:0.474, v:0.50, h:40, color:BLUE },
-        { name:'The Cove', value:'40 Stories', u:0.482, v:0.43, h:30, color:SAGE }
+        { name:'Vela',     loc:'419 NE 19th St', value:'55 Stories', u:0.475, v:0.54, h:40, feat:true, color:BLUE },
+        { name:'The Cove', loc:'456 NE 29th St', value:'40 Stories', u:0.478, v:0.40, h:30, feat:true, color:SAGE }
       ]
     }
   };
@@ -131,7 +146,7 @@
   var cfg = CITIES.ny, currentKey = 'ny';
   var raycaster = new THREE.Raycaster();
   var pointer = new THREE.Vector2(-2, -2);
-  var hovered = null, selected = -1;
+  var pickers = [], hoveredIdx = -1, selected = -1;
   var clock = new THREE.Clock();
   var introT = 0, introDur = 1.8, introDone = false, started = false;
   var visible = false, focusing = false;
@@ -262,10 +277,10 @@
     renderer.domElement.addEventListener('pointerdown', function () { mapEl.classList.add('grabbing'); });
     window.addEventListener('pointerup', function () { mapEl.classList.remove('grabbing'); });
     renderer.domElement.addEventListener('pointerleave', function () { pointer.set(-2,-2); setHover(null); });
-    renderer.domElement.addEventListener('click', function () { if (hovered) focusProject(hovered.userData.idx); });
+    renderer.domElement.addEventListener('click', function () { if (hoveredIdx >= 0) focusProject(hoveredIdx); });
     window.addEventListener('resize', sizeRenderer);
 
-    wirePanel();
+    wireToggle();
     buildCity('ny', true);
     if (loading) loading.classList.add('hide');
     requestAnimationFrame(tick);
@@ -288,7 +303,7 @@
 
     if (cityGroup) { scene.remove(cityGroup); disposeGroup(cityGroup); }
     cityGroup = new THREE.Group(); scene.add(cityGroup);
-    towers = []; markers = []; hovered = null; selected = -1;
+    towers = []; markers = []; pickers = []; hoveredIdx = -1; selected = -1;
     if (tip) tip.classList.remove('show');
 
     // board
@@ -305,11 +320,8 @@
 
     // ui sync
     if (cityLabelEl) cityLabelEl.textContent = cfg.label;
-    if (panel) {
-      panel.querySelectorAll('.map__city').forEach(function (b) { b.classList.toggle('active', b.getAttribute('data-city') === key); });
-      panel.querySelectorAll('.map__list').forEach(function (l) { l.hidden = l.getAttribute('data-citylist') !== key; });
-      panel.querySelectorAll('.map__proj').forEach(function (b) { b.classList.remove('active'); });
-    }
+    if (panel) panel.querySelectorAll('.map__city').forEach(function (b) { b.classList.toggle('active', b.getAttribute('data-city') === key); });
+    buildPanel(key);
   }
 
   function buildBuildings() {
@@ -353,21 +365,32 @@
 
   function buildTowers() {
     cfg.projects.forEach(function (p, i) {
-      var w = uvToWorld(p.u, p.v); var grp = new THREE.Group(); grp.position.set(w.x, 0, w.z);
+      var w = uvToWorld(p.u, p.v);
+      var grp = new THREE.Group(); grp.position.set(w.x, 0, w.z);
+      var foot = p.feat ? 1.8 : 1.3;
       var mat = new THREE.MeshStandardMaterial({ color: p.color, roughness: 0.35, metalness: 0.1,
-        emissive: new THREE.Color(p.color).multiplyScalar(0.25), emissiveIntensity: 0.0 });
-      var mesh = new THREE.Mesh(new THREE.BoxGeometry(1.7, p.h, 1.7), mat);
+        emissive: new THREE.Color(p.color).multiplyScalar(0.3), emissiveIntensity: p.feat ? 0.12 : 0.0 });
+      var mesh = new THREE.Mesh(new THREE.BoxGeometry(foot, p.h, foot), mat);
       mesh.position.y = p.h/2; mesh.castShadow = true; mesh.receiveShadow = true;
-      mesh.userData = { idx: i, name: p.name, value: p.value, base: p.h, mat: mat };
       grp.add(mesh);
-      var beam = new THREE.Mesh(new THREE.CylinderGeometry(0.05,0.05,7,6),
-        new THREE.MeshBasicMaterial({ color:p.color, transparent:true, opacity:0.45 }));
-      beam.position.y = p.h + 3.5; grp.add(beam);
-      var glow = glowSprite(p.color); glow.scale.set(4,4,1); glow.position.y = p.h + 7.5; grp.add(glow);
-      var ring = new THREE.Mesh(new THREE.TorusGeometry(1.05,0.06,8,36),
-        new THREE.MeshBasicMaterial({ color:p.color, transparent:true, opacity:0.85 }));
-      ring.rotation.x = Math.PI/2; ring.position.y = p.h + 7.5; grp.add(ring);
-      grp.userData = { ring: ring, glow: glow };
+
+      var pinY = p.h + (p.feat ? 5 : 3);
+      // always-visible pin (renders over the skyline)
+      var glow = glowSprite(p.color);
+      glow.material.depthTest = false; glow.renderOrder = 998;
+      var gs = p.feat ? 3.4 : 2.2; glow.scale.set(gs, gs, 1); glow.position.y = pinY;
+      grp.add(glow);
+      var ring = new THREE.Mesh(new THREE.TorusGeometry(p.feat ? 1.0 : 0.7, 0.05, 8, 32),
+        new THREE.MeshBasicMaterial({ color:p.color, transparent:true, opacity:0, depthTest:false }));
+      ring.renderOrder = 999; ring.rotation.x = Math.PI/2; ring.position.y = pinY; grp.add(ring);
+
+      // invisible pick column for reliable hover/click against any skyline
+      var pick = new THREE.Mesh(new THREE.CylinderGeometry(1.8, 1.8, pinY + 2, 6),
+        new THREE.MeshBasicMaterial({ transparent:true, opacity:0, depthWrite:false, colorWrite:false }));
+      pick.position.y = (pinY + 2) / 2; pick.userData = { idx:i };
+      grp.add(pick); pickers.push(pick);
+
+      grp.userData = { ring: ring, glow: glow, mat: mat, feat: !!p.feat, base: p.h };
       grp.scale.y = reduce ? 1 : 0.001;
       cityGroup.add(grp); towers.push(mesh); markers.push(grp);
     });
@@ -379,20 +402,30 @@
     pointer.x = ((e.clientX-r.left)/r.width)*2 - 1;
     pointer.y = -((e.clientY-r.top)/r.height)*2 + 1;
   }
-  function setHover(mesh) {
-    if (hovered === mesh) return; hovered = mesh;
-    document.body.classList.toggle('cursor-hover', !!mesh && window.matchMedia('(hover:hover)').matches);
-    if (mesh) {
-      tip.innerHTML = '<b>'+mesh.userData.name+'</b><i>'+mesh.userData.value+'</i>';
+  function setHover(idx) {
+    if (idx === hoveredIdx) return; hoveredIdx = idx;
+    var on = idx >= 0;
+    document.body.classList.toggle('cursor-hover', on && window.matchMedia('(hover:hover)').matches);
+    if (on) {
+      var p = cfg.projects[idx];
+      tip.innerHTML = '<b>'+p.name+'</b><i>'+p.value+'</i>';
       tip.classList.add('show'); renderer.domElement.style.cursor = 'pointer';
-    } else { tip.classList.remove('show'); renderer.domElement.style.cursor = ''; }
+      if (panel) panel.querySelectorAll('#mapList .map__proj').forEach(function (b, k) { b.classList.toggle('hover', k === idx); });
+    } else {
+      tip.classList.remove('show'); renderer.domElement.style.cursor = '';
+      if (panel) panel.querySelectorAll('#mapList .map__proj.hover').forEach(function (b) { b.classList.remove('hover'); });
+    }
   }
   function focusProject(idx) {
     selected = idx;
-    if (panel) panel.querySelectorAll('.map__list[data-citylist="'+currentKey+'"] .map__proj').forEach(function (b, i) { b.classList.toggle('active', i === idx); });
+    if (panel) panel.querySelectorAll('#mapList .map__proj').forEach(function (b, i) {
+      b.classList.toggle('active', i === idx);
+      if (i === idx && b.scrollIntoView) b.scrollIntoView({ block:'nearest', behavior:'smooth' });
+    });
     var p = cfg.projects[idx], w = uvToWorld(p.u, p.v);
-    var target = new THREE.Vector3(w.x, p.h*0.45, w.z);
-    var camPos = new THREE.Vector3(w.x + 26, p.h*0.9 + 22, w.z + 32);
+    var target = new THREE.Vector3(w.x, p.h*0.45 + 2, w.z);
+    var dist = 24 + p.h * 0.7;
+    var camPos = new THREE.Vector3(w.x + dist, p.h*0.9 + 20, w.z + dist*1.2);
     focusing = true; if (controls) controls.autoRotate = false;
     if (hasGSAP && !reduce) {
       gsap.to(camera.position, { x:camPos.x, y:camPos.y, z:camPos.z, duration:1.3, ease:'power3.inOut' });
@@ -402,7 +435,7 @@
     } else { camera.position.copy(camPos); if (controls) { controls.target.copy(target); controls.update(); } focusing = false; }
   }
 
-  function wirePanel() {
+  function wireToggle() {
     if (!panel) return;
     panel.querySelectorAll('.map__city').forEach(function (b) {
       b.addEventListener('click', function () {
@@ -412,15 +445,22 @@
         if (controls) { controls.autoRotate = true; controls.target.set(0,4,0); }
       });
     });
-    panel.querySelectorAll('.map__proj').forEach(function (btn) {
-      var idx = parseInt(btn.getAttribute('data-proj'), 10);
-      var city = btn.getAttribute('data-city');
-      btn.addEventListener('click', function () {
-        if (city !== currentKey) { buildCity(city); setTimeout(function () { focusProject(idx); }, 650); }
-        else focusProject(idx);
-      });
-      btn.addEventListener('mouseenter', function () { if (city === currentKey && towers[idx]) setHover(towers[idx]); });
-      btn.addEventListener('mouseleave', function () { setHover(null); });
+  }
+  function buildPanel(key) {
+    var list = document.getElementById('mapList');
+    if (!list) return;
+    list.innerHTML = '';
+    cfg.projects.forEach(function (p, i) {
+      var b = document.createElement('button');
+      b.className = 'map__proj' + (p.feat ? ' feat' : '');
+      b.innerHTML =
+        '<span class="map__proj-no">' + ('0' + (i + 1)).slice(-2) + '</span>' +
+        '<span><span class="map__proj-name">' + p.name + '</span><span class="map__proj-loc">' + (p.loc || '') + '</span></span>' +
+        '<span class="map__proj-val">' + p.value + '</span>';
+      b.addEventListener('click', function () { focusProject(i); });
+      b.addEventListener('mouseenter', function () { setHover(i); });
+      b.addEventListener('mouseleave', function () { setHover(-1); });
+      list.appendChild(b);
     });
   }
 
@@ -449,27 +489,27 @@
 
     markers.forEach(function (g, i) {
       if (!introDone) return;
-      var s = 1 + Math.sin(time*2 + i)*0.12;
-      g.userData.ring.scale.set(s, s, s); g.userData.ring.rotation.z += dt*0.6;
-      g.userData.glow.material.opacity = 0.6 + Math.sin(time*2 + i)*0.25;
-      g.position.y = Math.sin(time*1.4 + i)*0.3;
+      var ud = g.userData;
+      var on = (i === hoveredIdx) || (i === selected);
+      var ringTarget = on ? 0.9 : (ud.feat ? 0.4 : 0.0);
+      ud.ring.material.opacity += (ringTarget - ud.ring.material.opacity) * 0.15;
+      var pulse = 1 + Math.sin(time*2 + i) * ((ud.feat || on) ? 0.16 : 0.06);
+      ud.ring.scale.set(pulse, pulse, pulse); ud.ring.rotation.z += dt*0.5;
+      ud.glow.material.opacity = (ud.feat ? 0.7 : 0.4) + Math.sin(time*2 + i)*0.18 + (on ? 0.3 : 0);
+      ud.mat.emissiveIntensity += ((on ? 0.6 : (ud.feat ? 0.12 : 0.0)) - ud.mat.emissiveIntensity) * 0.15;
+      var sx = g.scale.x + ((on ? 1.08 : 1.0) - g.scale.x) * 0.15;
+      g.scale.x = sx; g.scale.z = sx;
     });
 
     if (introDone && !focusing) {
       raycaster.setFromCamera(pointer, camera);
-      var hits = raycaster.intersectObjects(towers, false);
-      setHover(hits.length ? hits[0].object : null);
+      var hits = raycaster.intersectObjects(pickers, false);
+      setHover(hits.length ? hits[0].object.userData.idx : -1);
     }
 
-    towers.forEach(function (m) {
-      var on = (m === hovered) || (m.userData.idx === selected);
-      m.userData.mat.emissiveIntensity += ((on ? 0.6 : 0.0) - m.userData.mat.emissiveIntensity) * 0.15;
-      var sx = m.scale.x + (((m === hovered) ? 1.06 : 1.0) - m.scale.x) * 0.15;
-      m.scale.x = sx; m.scale.z = sx;
-    });
-
-    if (hovered && tip.classList.contains('show')) {
-      var wp = new THREE.Vector3(); hovered.getWorldPosition(wp); wp.y = hovered.userData.base + 4; wp.project(camera);
+    if (hoveredIdx >= 0 && tip.classList.contains('show')) {
+      var hg = markers[hoveredIdx]; var wp = new THREE.Vector3();
+      hg.getWorldPosition(wp); wp.y += hg.userData.base + 6; wp.project(camera);
       var r = renderer.domElement.getBoundingClientRect();
       tip.style.left = ((wp.x*0.5 + 0.5) * r.width) + 'px';
       tip.style.top = ((-wp.y*0.5 + 0.5) * r.height) + 'px';
